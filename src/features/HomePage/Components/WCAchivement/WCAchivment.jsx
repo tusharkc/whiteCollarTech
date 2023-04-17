@@ -1,5 +1,5 @@
 import React from "react";
-import directPlacment from "../../../../assets/images/directPlacement.png";
+import wcAchivment from "../../../../assets/images/wcAchivement.png";
 
 const WCAchivment = () => {
   return (
@@ -15,7 +15,6 @@ const WCAchivment = () => {
             we've built relationships, onboarded clients, and achieved many
             milestones.
           </p>
-
           <div className="flex item-center justify-between mt-8">
             <div className="w-24">
               <h2 className="text-5xl font-semibold text-[#0055A5]">10+</h2>
@@ -36,8 +35,8 @@ const WCAchivment = () => {
           </div>
         </div>
         <img
-          className="h-[400px] w-[474px] object-cover rounded-2xl"
-          src={directPlacment}
+          // className="h-[400px] w-[474px] object-cover rounded-2xl"
+          src={wcAchivment}
         />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import rightArrowIcon from "../../../../assets/icons/rightArrow_icon.svg";
+import arrowIcon from "../../../../assets/icons/arrowIcon.svg";
 
 const WCKPICard = ({ image, title, description, ctaLink }) => {
   return (
@@ -14,7 +14,7 @@ const WCKPICard = ({ image, title, description, ctaLink }) => {
           <p className="text-sm font-light">{description}</p>
           <Link to={ctaLink} className="text-[#0055A5] flex items-center mt-6">
             <p className="mr-4 hover:mr-5 transition-all">Get Started</p>
-            <img src={rightArrowIcon} alt="rightArrowIcon" />
+            <img src={arrowIcon} alt="arrowIcon" />
           </Link>
         </div>
       </div>
