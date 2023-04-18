@@ -1,10 +1,21 @@
 import React from "react";
-import wcStoryGraphic from "../../../../assets/images/wcstory_graphic.png";
+import wcStoryVideo from "../../../../assets/videos/wcStoryVideo.mp4";
 
 const WCStoryRight = () => {
   return (
-    <div className="col-span-6 flex items-center justify-center px-28 py-14">
-      <img src={wcStoryGraphic} alt="" />
+    <div className="col-span-6 flex items-center justify-end">
+      <video
+        width="474"
+        height="285"
+        className="object-cover"
+        controls={false}
+        muted
+        loop
+        playsInline
+        autoPlay={true}
+      >
+        <source defer src={wcStoryVideo} type="video/mp4" />
+      </video>
     </div>
   );
 };

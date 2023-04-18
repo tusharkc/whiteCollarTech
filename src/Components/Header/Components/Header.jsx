@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import wctLogoLight from "../../../assets/images/wctLogoWhite.svg";
+import wcLogoBlue from "../../../assets/images/wcLogoBlue.png";
 import downChevron from "../../../assets/icons/downChevronWhite.png";
 import { useLocation } from "react-router-dom";
 import "../style/headerStyle.css";
@@ -50,8 +51,7 @@ const Header = () => {
     <header className="absolute top-0 left-0 right-0">
       <div className="py-4 relative header-section bg-transparent">
         <div className="flex items-center justify-between mx-[140px]">
-          <img src={wctLogoLight} />
-          {console.log("isHeaderSticky", isHeaderSticky)}
+          <img src={!isHeaderSticky ? wctLogoLight : wcLogoBlue} />
           <div className={`flex min-w-[70%] justify-evenly`}>
             <p
               className={`cursor-pointer font-${
