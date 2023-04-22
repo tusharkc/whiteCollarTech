@@ -20,7 +20,7 @@ const PartnerWithUs = () => {
             already firmly planted in the Life Sciences Industry.
           </p>
 
-          <button className="mt-10 bg-white hover:bg-[#141414] hover:text-white transition-all p-2 rounded-md">
+          <button className="mt-10 bg-white hover:bg-[#141414] hover:text-white transition-all py-4 px-6 rounded-md">
             Partner with us
           </button>
         </div>

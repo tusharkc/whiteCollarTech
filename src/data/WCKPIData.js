@@ -6,7 +6,7 @@ import offShoreOffering from "../assets/images/offShoreOffering.png";
 const WCKPIData = [
   {
     image: itProjectStaffing,
-    title: "IT Project Staffing",
+    title: "Project Staffing",
     description:
       "We are the best recruiters when it comes to providing you with professionals including business analysts, QA specialists, project managers, technical writers, or computer system validation experts.",
     ctaLink: "/",

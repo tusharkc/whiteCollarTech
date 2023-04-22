@@ -20,6 +20,7 @@ const HomePageHeader = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
+          onClick={() => scroll(window.innerWidth)}
           className="h-screen min-w-full flex items-center px-[140px]"
         >
           <div className="max-w-xl">
@@ -58,6 +59,7 @@ const HomePageHeader = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
+          onClick={() => scroll(window.innerWidth)}
           className="h-screen min-w-full flex items-center px-[140px]"
         >
           <div className="max-w-2xl">
@@ -96,6 +98,7 @@ const HomePageHeader = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
+          onClick={() => scroll(-(2 * window.innerWidth))}
           className="h-screen min-w-full flex items-center px-[140px]"
         >
           <div className="max-w-2xl">

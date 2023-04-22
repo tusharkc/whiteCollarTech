@@ -13,7 +13,7 @@ const WCKPICard = ({ image, title, description, ctaLink }) => {
           <h4 className="py-7 text-3xl font-light">{title}</h4>
           <p className="text-sm font-light">{description}</p>
           <Link to={ctaLink} className="text-[#0055A5] flex items-center mt-6">
-            <p className="mr-4 hover:mr-5 transition-all">Get Started</p>
+            <p className="mr-4 hover:mr-12 transition-all">Explore</p>
             <img src={arrowIcon} alt="arrowIcon" />
           </Link>
         </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import wctLogoLight from "../../../assets/images/wctLogoWhite.svg";
 import wcLogoBlue from "../../../assets/images/wcLogoBlue.png";
-import downChevron from "../../../assets/icons/downChevronWhite.png";
+import downChevronWhite from "../../../assets/icons/downChevronWhite.png";
+import downChevronBlue from "../../../assets/icons/downChevronBlue.png";
 import { useLocation } from "react-router-dom";
 import "../style/headerStyle.css";
 
@@ -31,17 +32,17 @@ const Header = () => {
   };
 
   const HeaderOfferingOptions = () => (
-    <div className="absolute right-[40%] mt-8 bg-white p-6 rounded-3xl header-offering-box">
-      <p className="font-medium cursor-pointer p-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
+    <div className="absolute right-[47%] mt-8 bg-white p-6 rounded-3xl header-offering-box">
+      <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
         Managed Project Delivery
       </p>
-      <p className="font-medium cursor-pointer p-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
+      <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
         IT Project Staffing
       </p>
-      <p className="font-medium cursor-pointer p-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
+      <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
         Offshore Offerings
       </p>
-      <p className="font-medium cursor-pointer p-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
+      <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
         Direct Placement
       </p>
     </div>
@@ -51,9 +52,11 @@ const Header = () => {
     <header className="absolute top-0 left-0 right-0">
       <div className="py-4 relative header-section bg-transparent">
         <div className="flex items-center justify-between mx-[140px]">
-          <img src={!isHeaderSticky ? wctLogoLight : wcLogoBlue} />
+          <a href="/">
+            <img src={!isHeaderSticky ? wctLogoLight : wcLogoBlue} />
+          </a>
           <div className={`flex min-w-[70%] justify-evenly`}>
-            <p
+            {/* <p
               className={`cursor-pointer font-${
                 pathname == "/" ? "bold" : "medium"
               } ${
@@ -63,7 +66,7 @@ const Header = () => {
               }  ${!isHeaderSticky ? "text-white" : "text-black"}`}
             >
               Home
-            </p>
+            </p> */}
 
             <div
               className="cursor-pointer"
@@ -77,13 +80,13 @@ const Header = () => {
                 </p>
                 <img
                   style={{
-                    height: "24px",
+                    height: !isHeaderSticky ? "24px" : "34px",
                     padding: "2px",
                     transform: `rotate(${
                       showOfferingOptions ? "180" : "0"
                     }deg)`,
                   }}
-                  src={downChevron}
+                  src={!isHeaderSticky ? downChevronWhite : downChevronBlue}
                 />
               </span>
             </div>

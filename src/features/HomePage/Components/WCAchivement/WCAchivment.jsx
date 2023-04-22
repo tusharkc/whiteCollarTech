@@ -16,10 +16,10 @@ const WCAchivment = () => {
             milestones.
           </p>
           <div className="flex item-center justify-between mt-8">
-            <div className="w-24">
+            {/* <div className="w-24">
               <h2 className="text-5xl font-semibold text-[#0055A5]">10+</h2>
               <p>managed projects</p>
-            </div>
+            </div> */}
             <div className="w-24">
               <h2 className="text-5xl font-semibold text-[#0055A5]">12+</h2>
               <p>years of experience</p>

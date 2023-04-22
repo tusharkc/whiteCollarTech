@@ -1,5 +1,5 @@
 import React from "react";
-import doubleQuote from "../../../../assets/images/doubleQuote.png";
+import doubleQuote from "../../../../assets/images/doubleQuote.svg";
 import Slider from "react-slick";
 import arrowIcon from "../../../../assets/icons/arrowIcon.svg";
 import testimonialImg from "../../../../assets/images/testimonial1.png";
@@ -44,7 +44,7 @@ const Testimonial = () => {
   return (
     <div className="py-24">
       <h1 className="text-6xl font-light text-center">
-        Reflections of our commitment! &rdquo;
+        Reflections of our commitment!
       </h1>
 
       <img src={doubleQuote} className="py-10 mx-auto" />
