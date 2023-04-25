@@ -6,7 +6,7 @@ import arrowIcon from "../../../../assets/icons/arrowIcon.svg";
 const WCKPICard = ({ image, title, description, ctaLink }) => {
   return (
     <div>
-      <div className="bg-[#F7F7F7] flex items-center justify-center rounded-2xl">
+      <div className="bg-[#F7F7F7] flex items-center justify-center rounded-2xl cursor-pointer">
         <div className="mx-auto p-7">
           <img src={image} alt="kpi" className="object-cover min-w-full" />
 

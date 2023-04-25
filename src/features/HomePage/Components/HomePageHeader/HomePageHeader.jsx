@@ -32,20 +32,28 @@ const HomePageHeader = () => {
               overcome your challenges.
             </p>
 
-            <button className="bg-white p-3 rounded-lg hover:bg-[#0055A5] hover:text-white transition-all">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              className="bg-white p-3 rounded-lg hover:bg-[#0055A5] hover:text-white transition-all"
+            >
               Excel with us
             </button>
 
             <div className="text-white flex items-center mt-14">
-              <img
+              {/* <img
                 onClick={() => scroll(-window.innerWidth)}
                 src={arrowIconWhite}
                 alt=""
                 className="rotate-180"
-              />
+              /> */}
               <p>&nbsp;&nbsp; 1/3 &nbsp;&nbsp;</p>
               <img
-                onClick={() => scroll(window.innerWidth)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scroll(window.innerWidth);
+                }}
                 src={arrowIconWhite}
                 alt=""
               />
@@ -71,13 +79,21 @@ const HomePageHeader = () => {
               for you to conquer your challenges with finesse.
             </p>
 
-            <button className="bg-white p-3 rounded-lg hover:bg-[#0055A5] hover:text-white transition-all">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              className="bg-white p-3 rounded-lg hover:bg-[#0055A5] hover:text-white transition-all"
+            >
               Connect with us
             </button>
 
             <div className="text-white flex items-center mt-14">
               <img
-                onClick={() => scroll(-window.innerWidth)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scroll(-window.innerWidth);
+                }}
                 src={arrowIconWhite}
                 alt=""
                 className="rotate-180"
@@ -85,7 +101,10 @@ const HomePageHeader = () => {
               <p>&nbsp;&nbsp; 2/3 &nbsp;&nbsp;</p>
               <img
                 src={arrowIconWhite}
-                onClick={() => scroll(window.innerWidth)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scroll(window.innerWidth);
+                }}
                 alt=""
               />
             </div>
@@ -98,7 +117,7 @@ const HomePageHeader = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-          onClick={() => scroll(-(2 * window.innerWidth))}
+          // onClick={() => scroll(-(2 * window.innerWidth))}
           className="h-screen min-w-full flex items-center px-[140px]"
         >
           <div className="max-w-2xl">
@@ -111,23 +130,31 @@ const HomePageHeader = () => {
               your success because we specialize in life sciences.
             </p>
 
-            <button className="bg-white p-3 rounded-lg hover:bg-[#0055A5] hover:text-white transition-all">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              className="bg-white p-3 rounded-lg hover:bg-[#0055A5] hover:text-white transition-all"
+            >
               Hire the Experts
             </button>
 
             <div className="text-white flex items-center mt-14">
               <img
-                onClick={() => scroll(-window.innerWidth)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scroll(-window.innerWidth);
+                }}
                 src={arrowIconWhite}
                 alt=""
                 className="rotate-180"
               />
               <p>&nbsp;&nbsp; 3/3 &nbsp;&nbsp;</p>
-              <img
+              {/* <img
                 src={arrowIconWhite}
                 onClick={() => scroll(-(2 * window.innerWidth))}
                 alt=""
-              />
+              /> */}
             </div>
           </div>
         </div>

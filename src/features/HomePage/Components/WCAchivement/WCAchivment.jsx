@@ -25,7 +25,7 @@ const WCAchivment = () => {
               <p>years of experience</p>
             </div>
             <div className="w-24">
-              <h2 className="text-5xl font-semibold text-[#0055A5]">1K+</h2>
+              <h2 className="text-5xl font-semibold text-[#0055A5]">1000+</h2>
               <p>resources placed</p>
             </div>
             <div className="w-24">
