@@ -23,9 +23,9 @@ const WCAchivment = () => {
             </p>
             <div className="flex item-center justify-between mt-8">
               {/* <div className="w-24">
-              <h2 className="text-5xl font-semibold text-[#0055A5]">10+</h2>
-              <p>managed projects</p>
-            </div> */}
+                <h2 className="text-5xl font-semibold text-[#0055A5]">10+</h2>
+                <p>managed projects</p>
+              </div> */}
 
               {inView ? (
                 <>
