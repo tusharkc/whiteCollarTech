@@ -1,7 +1,7 @@
 import React from "react";
 import homePageCta from "../../../../assets/images/homePageCTA.png";
 
-const HomaPageCTA = () => {
+const HomePageCTA = () => {
   return (
     <div className="flex items-start">
       <img src={homePageCta} />
@@ -71,4 +71,4 @@ const HomaPageCTA = () => {
   );
 };
 
-export default HomaPageCTA;
+export default HomePageCTA;

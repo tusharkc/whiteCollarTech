@@ -6,7 +6,7 @@ import PartnerWithUs from "./PartnerWithUs/PartnerWithUs";
 import WCAchivment from "./WCAchivement/WCAchivment";
 import WCSellingPoints from "./SelllingPoints/WCSellingPoints";
 import Testimonial from "./Testimonial/Testimonial";
-import HomaPageCTA from "./HomePageCTA/HomaPageCTA";
+import HomePageCTA from "./HomePageCTA/HomePageCTA";
 import HomePageHeader from "./HomePageHeader/HomePageHeader";
 
 const HomePage = () => {
@@ -20,7 +20,7 @@ const HomePage = () => {
       <WCAchivment />
       <WCSellingPoints />
       <Testimonial />
-      <HomaPageCTA />
+      <HomePageCTA />
       <Footer />
     </>
   );
