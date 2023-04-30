@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Linkdin = () => {
-  const [hovered, setHovered] = useState(false);
+const Linkdin = ({ defaultHovered = false }) => {
+  const [hovered, setHovered] = useState(defaultHovered);
 
   return (
     <svg

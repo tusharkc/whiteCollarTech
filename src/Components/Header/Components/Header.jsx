@@ -3,8 +3,9 @@ import wctLogoLight from "../../../assets/images/wctLogoWhite.svg";
 import wcLogoBlue from "../../../assets/images/wcLogoBlue.png";
 import downChevronWhite from "../../../assets/icons/downChevronWhite.png";
 import downChevronBlue from "../../../assets/icons/downChevronBlue.png";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../style/headerStyle.css";
+import { appPathName } from "../../../data";
 
 const Header = () => {
   const location = useLocation();
@@ -49,12 +50,12 @@ const Header = () => {
   );
 
   return (
-    <header className="absolute top-0 left-0 right-0">
+    <header className="absolute top-0 left-0 right-0 z-10">
       <div className="py-4 relative header-section bg-transparent">
         <div className="flex items-center justify-between mx-[140px]">
-          <a href="/">
+          <Link to={appPathName.homePagePath}>
             <img src={!isHeaderSticky ? wctLogoLight : wcLogoBlue} />
-          </a>
+          </Link>
           <div className={`flex min-w-[70%] justify-evenly`}>
             {/* <p
               className={`cursor-pointer font-${
@@ -90,17 +91,20 @@ const Header = () => {
                 />
               </span>
             </div>
-            <p
-              className={`cursor-pointer font-${
-                pathname == "/about-us" ? "bold" : "medium"
-              } ${
-                isHeaderSticky && pathname == "/about-us"
-                  ? "text-[#0845B7]"
-                  : "text-black"
-              } ${!isHeaderSticky ? "text-white" : "text-black"}`}
-            >
-              About Us
-            </p>
+            <Link to={appPathName.aboutUsPath}>
+              <p
+                className={`cursor-pointer font-${
+                  pathname == "/about-us" ? "bold" : "medium"
+                } ${
+                  isHeaderSticky && pathname == "/about-us"
+                    ? "text-[#0845B7]"
+                    : "text-black"
+                } ${!isHeaderSticky ? "text-white" : "text-black"}`}
+              >
+                About Us
+              </p>
+            </Link>
+
             <p
               className={`cursor-pointer font-${
                 pathname == "/career" ? "bold" : "medium"
