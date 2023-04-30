@@ -22,6 +22,8 @@ const WcTeamMembers = ({
           src={imgSrc}
         />
         <p
+          onMouseEnter={() => setDivHovered(true)}
+          onMouseLeave={() => setDivHovered(false)}
           className={`absolute z-10 bottom-0 p-3 ${
             divHovered ? "text-white" : "text-transparent"
           }`}
