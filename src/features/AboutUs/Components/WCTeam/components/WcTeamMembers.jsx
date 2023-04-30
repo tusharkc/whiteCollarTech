@@ -16,7 +16,9 @@ const WcTeamMembers = ({
         className="relative overflow-hidden bg-cover bg-no-repeat"
       >
         <img
-          className="w-full transition duration-300 ease-in-out hover:scale-200"
+          className={`w-full transition duration-300 ease-in-out ${
+            divHovered ? "scale-110" : ""
+          }`}
           src={imgSrc}
         />
         <p
