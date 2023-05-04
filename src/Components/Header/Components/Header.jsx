@@ -116,17 +116,19 @@ const Header = () => {
             >
               Career
             </p>
-            <p
-              className={`cursor-pointer font-${
-                pathname == "/contact-us" ? "bold" : "medium"
-              } ${
-                isHeaderSticky && pathname == "/contact-us"
-                  ? "text-[#0845B7]"
-                  : "text-black"
-              } ${!isHeaderSticky ? "text-white" : "text-black"}`}
-            >
-              Contact Us
-            </p>
+            <Link to={appPathName.contactUsPath}>
+              <p
+                className={`cursor-pointer font-${
+                  pathname == "/contact-us" ? "bold" : "medium"
+                } ${
+                  isHeaderSticky && pathname == "/contact-us"
+                    ? "text-[#0845B7]"
+                    : "text-black"
+                } ${!isHeaderSticky ? "text-white" : "text-black"}`}
+              >
+                Contact Us
+              </p>
+            </Link>
           </div>
         </div>
 
