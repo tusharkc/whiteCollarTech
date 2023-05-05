@@ -54,7 +54,7 @@ const HomePageCTA = () => {
             className="my-20 active:outline-none focus:outline-none border-b-2 border-black p-2 min-w-full"
           />
 
-          <input
+          <textarea
             name="message"
             id="message"
             placeholder="Message (Optional)"
@@ -74,7 +74,7 @@ const HomePageCTA = () => {
             </span>
           </label>
 
-          <button className="my-12 bg-[#0055A5] text-white hover:bg-[#141414] px-4 py-2 rounded-lg transition-all">
+          <button className="my-6 bg-[#0055A5] text-white hover:bg-[#141414] px-4 py-2 rounded-lg transition-all">
             Submit
           </button>
         </form>

@@ -19,6 +19,7 @@ const HomePageHeader = () => {
             backgroundImage: `url(${homePageHeader1})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            objectFit: "cover",
           }}
           onClick={() => scroll(window.innerWidth)}
           className="h-screen min-w-full flex items-center px-[140px]"
@@ -66,6 +67,7 @@ const HomePageHeader = () => {
             backgroundImage: `url(${homePageHeader2})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            objectFit: "cover",
           }}
           onClick={() => scroll(window.innerWidth)}
           className="h-screen min-w-full flex items-center px-[140px]"
@@ -116,6 +118,7 @@ const HomePageHeader = () => {
             backgroundImage: `url(${homePageHeader3})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            objectFit: "cover",
           }}
           // onClick={() => scroll(-(2 * window.innerWidth))}
           className="h-screen min-w-full flex items-center px-[140px]"

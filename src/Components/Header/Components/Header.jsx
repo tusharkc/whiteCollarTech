@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   const HeaderOfferingOptions = () => (
-    <div className="absolute right-[47%] mt-8 bg-white p-6 rounded-3xl header-offering-box">
+    <div className="absolute right-[37%] mt-8 bg-white p-6 rounded-3xl header-offering-box">
       <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
         Managed Project Delivery
       </p>
@@ -56,7 +56,7 @@ const Header = () => {
           <Link to={appPathName.homePagePath}>
             <img src={!isHeaderSticky ? wctLogoLight : wcLogoBlue} />
           </Link>
-          <div className={`flex min-w-[70%] justify-evenly`}>
+          <div className={`flex w-[750px] justify-evenly`}>
             {/* <p
               className={`cursor-pointer font-${
                 pathname == "/" ? "bold" : "medium"

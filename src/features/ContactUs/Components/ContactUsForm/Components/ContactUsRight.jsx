@@ -28,7 +28,7 @@ const ContactUsRight = () => {
             className="outline-none border-b-2 border-black p-1 bg-transparent w-full my-16"
             placeholder="Email"
           />
-          <input
+          <textarea
             className="outline-none border-b-2 border-black p-1 bg-transparent w-full"
             placeholder="Message (Optional)"
           />
