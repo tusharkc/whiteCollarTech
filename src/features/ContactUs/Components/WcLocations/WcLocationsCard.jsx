@@ -1,23 +1,15 @@
 import React from "react";
 
-const WcLocationsCard = ({ iframeSrc, city, country, locationInfo }) => {
+const WcLocationsCard = ({ imgSrc, state, country }) => {
   return (
     <>
-      <iframe
-        src={iframeSrc}
-        height="289"
-        loading="lazy"
-        className="w-full rounded-2xl"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+      <div class="relative w-full overflow-hidden bg-cover bg-no-repeat">
+        <img src={imgSrc} class="w-full" alt="Louvre" />
+        <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-t from-[#000] to-transparent opacity-70 rounded-3xl"></div>
 
-      <div className="mt-7">
-        <h2 className="font-light text-[40px]">
-          {city},<br />
-          {country}
-        </h2>
-
-        <p className="mt-3 font-light">{locationInfo}</p>
+        <p className="absolute bottom-0 font-light text-[40px] text-white p-4">
+          {state}, <br /> {country}
+        </p>
       </div>
     </>
   );

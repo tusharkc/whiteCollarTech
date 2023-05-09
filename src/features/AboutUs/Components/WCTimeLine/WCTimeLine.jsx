@@ -6,8 +6,9 @@ const WCTimeLine = () => {
       <div className="tracking-normal text-center mb-20">
         <h1 className="text-5xl font-light">From inception to present</h1>
         <p className="mt-4 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus <br /> nec ullamcorper.
+          Want to know where we started? Our journey is filled with milestones,{" "}
+          <br />
+          achievements and a lot of growth.
         </p>
       </div>
 
