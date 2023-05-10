@@ -16,8 +16,8 @@ const Footer = () => {
         <div className="grid grid-cols-12 gap-28">
           <div className="col-span-3">
             <img src={wctLogoLight} />
-            <p className="mt-9 mb-12">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p className="mt-9 mb-12 text-sm leading-6">
+              Hire the best team of professionals and get quality consistently.{" "}
             </p>
             <div className="flex items-baseline justify-between mb-12">
               <Facebook />
@@ -30,7 +30,7 @@ const Footer = () => {
 
             <iframe
               className="rounded-2xl"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777452.4479620033!2d68.68639244531168!3d22.394433198572248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959051f5f0ef795%3A0x861bd887ed54522e!2sGujarat!5e0!3m2!1sen!2sin!4v1681710369337!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.086714315409!2d-75.33808822339633!3d40.71610753736326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c46a74055a4495%3A0x3756958a42ab9252!2s630%20Municipal%20Dr%2C%20Nazareth%2C%20PA%2018064%2C%20USA!5e0!3m2!1sen!2sin!4v1683689479648!5m2!1sen!2sin"
               width="278"
               height="183"
               style={{ border: 0 }}
@@ -42,21 +42,29 @@ const Footer = () => {
           <div className="col-span-9">
             <div className="flex items-start justify-between mb-5">
               <div>
-                <h5 className="font-bold text-2xl pb-6">Address</h5>
+                <h5 className="font-bold text-2xl pb-6">
+                  Address &nbsp;{" "}
+                  <span className="font-light text-sm tracking-[3px]">
+                    HEADQUARTERS
+                  </span>
+                </h5>
 
-                <p>● 457 Morningview Lane, New York USA</p>
-                <p className="py-3">● 457 Morningview Lane, New York USA</p>
-                <p>● 457 Morningview Lane, New York USA</p>
+                <h4 className="text-2xl">Pennsylvania, USA</h4>
+                <p className="mt-1">
+                  630 Municipal Drive, Suite # 400 <br /> Nazareth PA 18064
+                </p>
               </div>
               <div>
                 <h5 className="font-bold text-2xl pb-6">Email</h5>
-
-                <p>Dummy@Email.com</p>
+                <a href="mailto: info@whitecollartech.com">
+                  <p>info@whitecollartech.com</p>
+                </a>
               </div>
               <div>
                 <h5 className="font-bold text-2xl pb-6">Phone</h5>
-
-                <p>+91 992 545 0350</p>
+                <a href="tel:+14842981111">
+                  <p>484-298-1111</p>
+                </a>
               </div>
             </div>
 
