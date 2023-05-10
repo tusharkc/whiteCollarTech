@@ -46,7 +46,7 @@ const ContactUsRight = () => {
               <textarea
                 onClick={() => setOpen(true)}
                 value={!open && msgVal}
-                className="outline-none border-b-2 border-black p-1 bg-transparent w-full"
+                className="outline-none border-b-2 border-black p-1 bg-transparent w-full resize-none"
                 placeholder="Message (Optional)"
               />
 

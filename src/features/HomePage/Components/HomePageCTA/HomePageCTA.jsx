@@ -59,7 +59,7 @@ const HomePageCTA = () => {
               id="message"
               value={!open && msgVal}
               placeholder="Message (Optional)"
-              className="active:outline-none focus:outline-none border-b-2 border-black min-w-full"
+              className="active:outline-none focus:outline-none border-b-2 border-black min-w-full resize-none"
             />
 
             <label className="flex items-start justify-center gap-2 mt-14">
