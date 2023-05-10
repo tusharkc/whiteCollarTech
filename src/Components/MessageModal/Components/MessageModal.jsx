@@ -33,8 +33,8 @@ const MessageModal = ({ open, setOpen, msgVal, setMsgVal }) => {
         <textarea
           value={msgVal}
           onChange={(e) => setMsgVal(e.target.value)}
-          style={{ minHeight: "250px" }}
-          className="w-full bg-white rounded-2xl my-4 p-2"
+          style={{ height: "250px" }}
+          className="w-full bg-white rounded-2xl my-4 p-2 resize-none"
           placeholder="Write your message here..."
         ></textarea>
 
