@@ -7,7 +7,7 @@ import { MessageModal } from "../../../../Components";
 const HomePageCTA = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-
+  const [msgVal, setMsgVal] = useState("");
   const onFormSubmit = (e) => {
     e.preventDefault();
 
@@ -57,6 +57,7 @@ const HomePageCTA = () => {
               onClick={() => setOpen(true)}
               name="message"
               id="message"
+              value={!open && msgVal}
               placeholder="Message (Optional)"
               className="active:outline-none focus:outline-none border-b-2 border-black min-w-full"
             />
@@ -81,7 +82,12 @@ const HomePageCTA = () => {
         </div>
       </div>
 
-      <MessageModal open={open} setOpen={setOpen} />
+      <MessageModal
+        open={open}
+        setOpen={setOpen}
+        msgVal={msgVal}
+        setMsgVal={setMsgVal}
+      />
     </>
   );
 };
