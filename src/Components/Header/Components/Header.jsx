@@ -56,7 +56,10 @@ const Header = () => {
       <header className="absolute top-0 left-0 right-0 z-10">
         <div className="py-4 relative header-section bg-transparent">
           <div className="flex items-center justify-between mx-[140px]">
-            <Link to={appPathName.homePagePath}>
+            <Link
+              onClick={() => window.scrollTo(0, 0)}
+              to={appPathName.homePagePath}
+            >
               <img src={!isHeaderSticky ? wctLogoLight : wcLogoBlue} />
             </Link>
             <div className={`flex w-[750px] justify-evenly`}>

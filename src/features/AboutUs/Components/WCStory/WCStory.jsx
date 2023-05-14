@@ -43,8 +43,8 @@ const WCStory = () => {
             <img src={ceoSignature} />
 
             <p className="text-xl mt-6">
-              CEO & founder of White Collar{" "}
-              <span className="text-[#0055A5]">White Collar</span>
+              CEO & founder of
+              <span className="text-[#0055A5]"> White Collar</span>
             </p>
           </div>
         </div>
