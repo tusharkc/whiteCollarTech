@@ -6,6 +6,7 @@ import downChevronBlue from "../../../assets/icons/downChevronBlue.png";
 import { Link, useLocation } from "react-router-dom";
 import "../style/headerStyle.css";
 import { appPathName } from "../../../data";
+import ScrollToTop from "../../ScrollToTop/ScrollToTop";
 
 const Header = () => {
   const location = useLocation();
@@ -50,14 +51,16 @@ const Header = () => {
   );
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-10">
-      <div className="py-4 relative header-section bg-transparent">
-        <div className="flex items-center justify-between mx-[140px]">
-          <Link to={appPathName.homePagePath}>
-            <img src={!isHeaderSticky ? wctLogoLight : wcLogoBlue} />
-          </Link>
-          <div className={`flex w-[750px] justify-evenly`}>
-            {/* <p
+    <>
+      <ScrollToTop />
+      <header className="absolute top-0 left-0 right-0 z-10">
+        <div className="py-4 relative header-section bg-transparent">
+          <div className="flex items-center justify-between mx-[140px]">
+            <Link to={appPathName.homePagePath}>
+              <img src={!isHeaderSticky ? wctLogoLight : wcLogoBlue} />
+            </Link>
+            <div className={`flex w-[750px] justify-evenly`}>
+              {/* <p
               className={`cursor-pointer font-${
                 pathname == "/" ? "bold" : "medium"
               } ${
@@ -69,72 +72,75 @@ const Header = () => {
               Home
             </p> */}
 
-            <div
-              className="cursor-pointer"
-              onClick={() => setShowOfferingOptions(!showOfferingOptions)}
-            >
-              <span className="flex items-center">
+              <div
+                className="cursor-pointer"
+                onClick={() => setShowOfferingOptions(!showOfferingOptions)}
+              >
+                <span className="flex items-center">
+                  <p
+                    className={`${
+                      !isHeaderSticky ? "text-white" : "text-black"
+                    }`}
+                  >
+                    Our Offering
+                  </p>
+                  <img
+                    style={{
+                      height: !isHeaderSticky ? "24px" : "34px",
+                      padding: "2px",
+                      transform: `rotate(${
+                        showOfferingOptions ? "180" : "0"
+                      }deg)`,
+                    }}
+                    src={!isHeaderSticky ? downChevronWhite : downChevronBlue}
+                  />
+                </span>
+              </div>
+              <Link to={appPathName.aboutUsPath}>
                 <p
-                  className={`${!isHeaderSticky ? "text-white" : "text-black"}`}
+                  className={`cursor-pointer font-${
+                    pathname == "/about-us" ? "bold" : "medium"
+                  } ${
+                    isHeaderSticky && pathname == "/about-us"
+                      ? "text-[#0845B7]"
+                      : "text-black"
+                  } ${!isHeaderSticky ? "text-white" : "text-black"}`}
                 >
-                  Our Offering
+                  About Us
                 </p>
-                <img
-                  style={{
-                    height: !isHeaderSticky ? "24px" : "34px",
-                    padding: "2px",
-                    transform: `rotate(${
-                      showOfferingOptions ? "180" : "0"
-                    }deg)`,
-                  }}
-                  src={!isHeaderSticky ? downChevronWhite : downChevronBlue}
-                />
-              </span>
+              </Link>
+
+              <p
+                className={`cursor-pointer font-${
+                  pathname == "/career" ? "bold" : "medium"
+                } ${
+                  isHeaderSticky && pathname == "/career"
+                    ? "text-[#0845B7]"
+                    : "text-black"
+                } ${!isHeaderSticky ? "text-white" : "text-black"}`}
+              >
+                Career
+              </p>
+              <Link to={appPathName.contactUsPath}>
+                <p
+                  className={`cursor-pointer font-${
+                    pathname == "/contact-us" ? "bold" : "medium"
+                  } ${
+                    isHeaderSticky && pathname == "/contact-us"
+                      ? "text-[#0845B7]"
+                      : "text-black"
+                  } ${!isHeaderSticky ? "text-white" : "text-black"}`}
+                >
+                  Contact Us
+                </p>
+              </Link>
             </div>
-            <Link to={appPathName.aboutUsPath}>
-              <p
-                className={`cursor-pointer font-${
-                  pathname == "/about-us" ? "bold" : "medium"
-                } ${
-                  isHeaderSticky && pathname == "/about-us"
-                    ? "text-[#0845B7]"
-                    : "text-black"
-                } ${!isHeaderSticky ? "text-white" : "text-black"}`}
-              >
-                About Us
-              </p>
-            </Link>
-
-            <p
-              className={`cursor-pointer font-${
-                pathname == "/career" ? "bold" : "medium"
-              } ${
-                isHeaderSticky && pathname == "/career"
-                  ? "text-[#0845B7]"
-                  : "text-black"
-              } ${!isHeaderSticky ? "text-white" : "text-black"}`}
-            >
-              Career
-            </p>
-            <Link to={appPathName.contactUsPath}>
-              <p
-                className={`cursor-pointer font-${
-                  pathname == "/contact-us" ? "bold" : "medium"
-                } ${
-                  isHeaderSticky && pathname == "/contact-us"
-                    ? "text-[#0845B7]"
-                    : "text-black"
-                } ${!isHeaderSticky ? "text-white" : "text-black"}`}
-              >
-                Contact Us
-              </p>
-            </Link>
           </div>
-        </div>
 
-        {showOfferingOptions ? <HeaderOfferingOptions /> : <></>}
-      </div>
-    </header>
+          {showOfferingOptions ? <HeaderOfferingOptions /> : <></>}
+        </div>
+      </header>
+    </>
   );
 };
 
