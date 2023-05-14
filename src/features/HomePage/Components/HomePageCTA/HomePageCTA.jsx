@@ -33,12 +33,14 @@ const HomePageCTA = () => {
           <form onSubmit={onFormSubmit}>
             <div className="grid grid-cols-12 gap-4 mt-16">
               <input
+                required
                 className="col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                 placeholder="Full Name"
                 name="fullName"
                 id="fullName"
               />
               <input
+                required
                 className="col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                 placeholder="Phone Number"
                 name="phoneNumber"
@@ -47,6 +49,7 @@ const HomePageCTA = () => {
             </div>
 
             <input
+              required
               name="email"
               id="email"
               placeholder="Email Address"
@@ -65,6 +68,7 @@ const HomePageCTA = () => {
             <label className="flex items-start justify-center gap-2 mt-14">
               <div>
                 <input
+                  required
                   style={{ height: "25px", width: "25px" }}
                   type="checkbox"
                 />
@@ -75,7 +79,10 @@ const HomePageCTA = () => {
               </span>
             </label>
 
-            <button className="my-6 bg-[#0055A5] text-white hover:bg-[#141414] px-4 py-2 rounded-lg transition-all">
+            <button
+              type="submit"
+              className="my-6 bg-[#0055A5] text-white hover:bg-[#141414] px-4 py-2 rounded-lg transition-all"
+            >
               Submit
             </button>
           </form>

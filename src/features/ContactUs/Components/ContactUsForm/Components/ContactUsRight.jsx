@@ -31,15 +31,18 @@ const ContactUsRight = () => {
             <div className="mt-16">
               <div className="grid grid-cols-12 gap-4">
                 <input
+                  required
                   className="col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                   placeholder="Full Name"
                 />
                 <input
+                  required
                   className="col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                   placeholder="Phone Number"
                 />
               </div>
               <input
+                required
                 className="outline-none border-b-2 border-black p-1 bg-transparent w-full my-16"
                 placeholder="Email"
               />
@@ -53,6 +56,7 @@ const ContactUsRight = () => {
               <label className="flex items-start justify-center my-12">
                 <div>
                   <input
+                    required
                     style={{ height: "22px", width: "22px" }}
                     type="checkbox"
                   />
