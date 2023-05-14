@@ -30,7 +30,7 @@ const HomePageHeader = () => {
           onClick={() => scroll(window.innerWidth)}
           className="h-screen min-w-full relative"
         >
-          <div className="max-w-[580px] absolute bottom-[130px] left-[140px]">
+          <div className="max-w-[580px] absolute bottom-[20%] left-[7%]">
             <h1 className="text-white text-6xl font-extrabold tracking-wider leading-snug">
               {heading}
             </h1>
