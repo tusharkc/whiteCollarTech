@@ -8,6 +8,8 @@ import {
   Twitter,
   Youtube,
 } from "../../SocialIcon";
+import { Link } from "react-router-dom";
+import { appPathName } from "../../../data";
 
 const Footer = () => {
   return (
@@ -74,10 +76,16 @@ const Footer = () => {
               <div>
                 <h5 className="font-bold text-2xl pb-6">Quicklinks</h5>
 
-                <p className="cursor-pointer">Home</p>
+                <Link to={appPathName.homePagePath}>
+                  <p className="cursor-pointer">Home</p>
+                </Link>
                 <p className="py-4 cursor-pointer">Career</p>
-                <p className="cursor-pointer">About Us</p>
-                <p className="py-4 cursor-pointer">Contact Us</p>
+                <Link to={appPathName.aboutUsPath}>
+                  <p className="cursor-pointer">About Us</p>
+                </Link>
+                <Link to={appPathName.contactUsPath}>
+                  <p className="py-4 cursor-pointer">Contact Us</p>
+                </Link>
               </div>
               <div>
                 <h5 className="font-bold text-2xl pb-6">Services</h5>
