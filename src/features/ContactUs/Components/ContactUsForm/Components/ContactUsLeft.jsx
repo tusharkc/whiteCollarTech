@@ -3,8 +3,8 @@ import React from "react";
 const ContactUsLeft = () => {
   return (
     <div>
-      <h1 className="font-light text-5xl tracking-normal">
-        So what <br /> happens next?
+      <h1 className="font-light text-4xl sm:text-5xl tracking-normal">
+        So what <br className="hidden sm:block" /> happens next?
       </h1>
       <p className="text-lg mt-2 font-light">
         We follow a specific process when it comes to our interactions.

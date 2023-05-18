@@ -8,7 +8,7 @@ const ContactUsBanner = () => {
       <img
         src={bannerImage}
         alt="About Us Banner"
-        className="w-full h-auto object-cover"
+        className="w-full h-[70vh] sm:h-auto object-cover"
       />
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-10">

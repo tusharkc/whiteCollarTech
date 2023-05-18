@@ -31,7 +31,7 @@ const HomePageHeader = () => {
           className="h-screen min-w-full relative"
         >
           <div className="max-w-[580px] absolute bottom-[14%] left-[7%]">
-            <h1 className="text-white text-6xl font-extrabold tracking-wider leading-snug">
+            <h1 className="text-white text-4xl sm:text-6xl font-extrabold tracking-wider leading-snug">
               {heading}
             </h1>
             <p className="text-white mt-5 mb-10 leading-snug tracking-wider">
@@ -47,7 +47,7 @@ const HomePageHeader = () => {
               {btnText}
             </button>
 
-            <div className="text-white flex items-center mt-14">
+            <div className="text-white flex items-center mt-14 float-right px-6 sm:px-0">
               <img
                 onClick={(e) => {
                   e.stopPropagation();

@@ -4,9 +4,9 @@ import missionImg from "../../../../assets/images/mission.png";
 
 const VisionMission = () => {
   return (
-    <div className="my-36 mx-36">
-      <div className="grid grid-cols-12 tracking-normal gap-24">
-        <div className="col-span-6 flex items-center justify-center">
+    <div className="my-20 sm:my-36 mx-0 sm:mx-36 px-6 sm:px-0">
+      <div className="grid grid-cols-12 tracking-normal gap-4 sm:gap-24">
+        <div className="col-span-12 sm:col-span-6 flex items-center justify-center">
           <div className="max-w-xl">
             <h1 className="text-5xl font-light">Vision Statement</h1>
             <p className="text-[17px] mt-5 leading-7">
@@ -18,10 +18,13 @@ const VisionMission = () => {
             <img src={visionImg} className="mt-12" />
           </div>
         </div>
-        <div className="col-span-6 flex items-center">
+        <div className="col-span-12 sm:col-span-6 flex items-center">
           <div className="max-w-xl flex flex-col justify-between">
-            <img src={missionImg} className="self-end" />
-            <div className="mt-12">
+            <img
+              src={missionImg}
+              className="self-end order-2 sm:order-1 mt-12 sm:mt-0"
+            />
+            <div className="mt-12 order-1">
               <h1 className="text-5xl font-light">Mission Statement</h1>
               <p className="text-[17px] mt-5 leading-7">
                 We are committed to providing exceptional experiences to our

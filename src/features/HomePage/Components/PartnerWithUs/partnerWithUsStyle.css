@@ -1,5 +1,11 @@
 .partner-with-us-section {
-  background-image: url("../../../../assets/images//partnerWithUs.png");
+  background-image: url("../../../../assets/images/partnerWithUs.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .partner-with-us-section {
+    background-image: url("../../../../assets/images/partnerWithUsMobile.png");
+  }
 }
