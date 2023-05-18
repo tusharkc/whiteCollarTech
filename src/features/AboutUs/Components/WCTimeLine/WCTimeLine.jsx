@@ -2,9 +2,11 @@ import React from "react";
 import "./wcTimeLineStyles.css";
 const WCTimeLine = () => {
   return (
-    <div className="my-36">
-      <div className="tracking-normal text-center mb-20">
-        <h1 className="text-5xl font-light">From inception to present</h1>
+    <div className="my-20 sm:my-36 px-6 sm:px-0">
+      <div className="tracking-normal text-left sm:text-center mb-20">
+        <h1 className="text-4xl sm:text-5xl font-light">
+          From inception to present
+        </h1>
         <p className="mt-4 text-lg">
           Want to know where we started? Our journey is filled with milestones,{" "}
           <br />

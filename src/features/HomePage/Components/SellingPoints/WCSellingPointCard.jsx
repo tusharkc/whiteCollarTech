@@ -2,11 +2,11 @@ import React from "react";
 
 const WCSellingPointCard = ({ segmentName, reasonsArr, segmentIcon }) => {
   return (
-    <div className="py-10 px-8 bg-[#262626] rounded-3xl">
+    <div className="px-7 py-12 bg-[#262626] rounded-3xl">
       <div>
         <span className="flex items-center mb-10">
           <img src={segmentIcon} alt="icon" className="mr-5" />
-          <h2 className="text-5xl font-semibold">{segmentName}</h2>
+          <h2 className="text-4xl sm:text-5xl font-semibold">{segmentName}</h2>
         </span>
 
         {reasonsArr.map((reason, index) => (

@@ -8,7 +8,11 @@ const WCKPICard = ({ image, title, description, ctaLink }) => {
     <div>
       <div className="bg-[#F7F7F7] flex items-center justify-center rounded-2xl cursor-pointer">
         <div className="mx-auto p-7">
-          <img src={image} alt="kpi" className="object-cover min-w-full" />
+          <img
+            src={image}
+            alt="kpi"
+            className="object-cover min-w-full min-h-[290px] rounded-xl"
+          />
 
           <h4 className="py-7 text-3xl font-light">{title}</h4>
           <p className="text-sm font-light">{description}</p>

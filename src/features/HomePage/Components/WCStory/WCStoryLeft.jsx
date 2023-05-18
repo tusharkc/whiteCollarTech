@@ -2,7 +2,7 @@ import React from "react";
 
 const WCStoryLeft = () => {
   return (
-    <div className="col-span-6 py-14">
+    <div className="col-span-12 sm:col-span-6 py-14">
       <h2 className="text-5xl font-light mb-6">The White Collar Story</h2>
 
       <p className="font-light">

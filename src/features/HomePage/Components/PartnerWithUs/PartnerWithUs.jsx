@@ -4,10 +4,10 @@ import wcLogoV2 from "../../../../assets/images/wcLogoV2.svg";
 
 const PartnerWithUs = () => {
   return (
-    <div className="partner-with-us-section mt-[100px]">
-      <div className="flex items-center justify-around py-28 mx-[140px]">
+    <div className="partner-with-us-section mt-20 sm:mt-[100px]">
+      <div className="flex items-center justify-around py-7 sm:py-28 mx-4 sm:mx-[140px]">
         <div>
-          <h1 className="text-white text-5xl">
+          <h1 className="text-white text-4xl sm:text-5xl leading-10">
             Empowering{" "}
             <span className="font-extrabold">
               Life Science <br />
@@ -16,7 +16,8 @@ const PartnerWithUs = () => {
           </h1>
 
           <p className="text-white mt-4">
-            Our footprints may have started going around but our feet are <br />
+            Our footprints may have started going around but our feet are{" "}
+            <br className="hidden sm:block" />
             already firmly planted in the Life Sciences Industry.
           </p>
 
@@ -25,7 +26,7 @@ const PartnerWithUs = () => {
           </button>
         </div>
 
-        <img src={wcLogoV2} alt="wcLogo" />
+        <img className="hidden sm:block" src={wcLogoV2} alt="wcLogo" />
       </div>
     </div>
   );

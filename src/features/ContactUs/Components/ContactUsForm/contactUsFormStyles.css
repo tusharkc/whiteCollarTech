@@ -32,6 +32,7 @@
 .contactUsLeftStepsContainer:last-child::before {
   content: "";
 }
+
 .contactUsLeftStepsContainer .contactUsLeftStepsItem {
   height: 132px;
   position: relative;
@@ -48,4 +49,10 @@
   border-radius: 50%;
   border: 4px solid #0845b7;
   background-color: #0845b7;
+}
+
+@media (max-width: 767px) {
+  .contactUsLeftStepsContainer .contactUsLeftStepsItem {
+    padding-left: 30px;
+  }
 }

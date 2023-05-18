@@ -4,8 +4,8 @@ import WcTeamMembers from "./components/WcTeamMembers";
 
 const WCTeam = () => {
   return (
-    <div className="mb-36 mx-36">
-      <h1 className="text-5xl font-light">
+    <div className="mb-20 sm:mb-36 mx-0 sm:mx-36 px-6 sm:px-0">
+      <h1 className="text-4xl sm:text-5xl font-light">
         The success you see, the faces you don’t!
       </h1>
 
@@ -16,7 +16,7 @@ const WCTeam = () => {
 
       <div className="grid grid-cols-12 gap-4">
         {wcTeamData.map((member, index) => (
-          <div key={index} className="col-span-4">
+          <div key={index} className="col-span-12 sm:col-span-4">
             <WcTeamMembers {...member} />
           </div>
         ))}
