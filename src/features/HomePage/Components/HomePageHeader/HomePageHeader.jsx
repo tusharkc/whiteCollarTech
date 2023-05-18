@@ -47,7 +47,7 @@ const HomePageHeader = () => {
               {btnText}
             </button>
 
-            <div className="text-white flex items-center mt-14 float-right px-6 sm:px-0">
+            <div className="text-white flex items-center mt-14 float-right sm:float-none px-6 sm:px-0">
               <img
                 onClick={(e) => {
                   e.stopPropagation();
