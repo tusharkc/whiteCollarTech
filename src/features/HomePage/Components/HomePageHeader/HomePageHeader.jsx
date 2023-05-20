@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 
 import arrowIconWhite from "../../../../assets/icons/arrowIconWhite.svg";
 import homepageBannerData from "../../../../data/homePageBannerData";
+import useWindowSize from "../../../../hooks/useWindowSize";
 
 const HomePageHeader = () => {
   const ref = useRef(null);
@@ -10,6 +11,8 @@ const HomePageHeader = () => {
     ref.current.scrollLeft += scrollOffset;
   };
 
+  const { width } = useWindowSize();
+
   const HomePageBanner = ({
     homePageHeaderImg,
     heading,
@@ -17,18 +20,19 @@ const HomePageHeader = () => {
     btnText,
     currentIndex,
     finalIndex,
+    handsetHeaderImg,
   }) => {
     return (
       <>
         <div
           style={{
-            backgroundImage: `url(${homePageHeaderImg})`,
+            backgroundImage: `url(${
+              width > 767 ? homePageHeaderImg : handsetHeaderImg
+            })`,
             backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            objectFit: "cover",
           }}
           onClick={() => scroll(window.innerWidth)}
-          className="h-screen min-w-full relative"
+          className="h-screen min-w-full relative bg-cover"
         >
           <div className="max-w-[580px] absolute bottom-[14%] left-[7%]">
             <h1 className="text-white text-4xl sm:text-6xl font-extrabold tracking-wider leading-snug">
