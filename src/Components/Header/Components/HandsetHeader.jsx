@@ -84,20 +84,7 @@ const HandsetHeader = () => {
               <OfferingCard />
             </>
           ) : (
-            <>
-              <div
-                className="my-10 rounded-3xl"
-                style={{
-                  background: `url(https://images.pexels.com/photos/1330219/pexels-photo-1330219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
-                }}
-              >
-                <img src={wctLogoLight} className="mx-auto py-5 z-20" />
-
-                <p className="text-base font-light text-white p-4 tracking-normal z-20">
-                  Hire the best team of professionals and get quality
-                  consistently.
-                </p>
-              </div>
+            <div className="pb-40 pt-12">
               <div
                 onClick={() => setOfferingsActive(true)}
                 className="flex py-6 items-center"
@@ -113,7 +100,7 @@ const HandsetHeader = () => {
                   </div>
                 </Link>
               ))}
-            </>
+            </div>
           )}
         </>
       )}
