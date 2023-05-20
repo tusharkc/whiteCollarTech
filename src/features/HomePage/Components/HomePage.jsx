@@ -21,7 +21,7 @@ const HomePage = () => {
       <WCSellingPoints />
       <Testimonial />
       <HomePageCTA />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

@@ -5,9 +5,8 @@
 
 *,
 *::before,
-* ::after {
-  padding: 0px;
-  margin: 0px;
+*::after {
+  margin: 0;
   box-sizing: border-box;
 }
 
