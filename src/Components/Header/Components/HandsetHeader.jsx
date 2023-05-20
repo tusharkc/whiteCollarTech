@@ -4,12 +4,14 @@ import closeIcon from "../../../assets/icons/close.png";
 import blueRightChevron from "../../../assets/icons/blueRightChevron.svg";
 import { useState } from "react";
 import { appPathName } from "../../../data";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import wctLogoLight from "../../../assets/images/wctLogoWhite.svg";
 
 const HandsetHeader = () => {
   const [headerActive, setHeaderActive] = useState(false);
   const [offeringsActive, setOfferingsActive] = useState(false);
+
+  const navigate = useNavigate();
   const headerData = [
     { title: "About Us", navigateTo: appPathName.aboutUsPath },
     { title: "Career", navigateTo: appPathName.homePagePath },
@@ -52,7 +54,11 @@ const HandsetHeader = () => {
       className="container mx-auto fixed left-0 right-0 z-50 bg-white p-5"
     >
       <div className="flex items-center justify-between">
-        <img src={wcLogoBlue} className="w-44" />
+        <img
+          src={wcLogoBlue}
+          onClick={() => navigate(appPathName.homePagePath)}
+          className="w-44"
+        />
         <>
           {!headerActive ? (
             <div class="space-y-1.5" onClick={() => setHeaderActive(true)}>
