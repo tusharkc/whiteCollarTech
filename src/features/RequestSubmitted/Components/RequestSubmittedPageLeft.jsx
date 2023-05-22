@@ -5,7 +5,7 @@ const RequestSubmittedPageLeft = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="col-span-6">
+    <div className="col-span-12 sm:col-span-6">
       <h2 className="font-light text-5xl">Thank You!</h2>
 
       <p className="font-light mt-7 leading-7">

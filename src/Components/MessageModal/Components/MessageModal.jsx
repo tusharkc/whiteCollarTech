@@ -1,23 +1,29 @@
 import React from "react";
 import Modal from "react-modal";
+import useWindowSize from "../../../hooks/useWindowSize";
 
 const MessageModal = ({ open, setOpen, msgVal, setMsgVal }) => {
+  const { width } = useWindowSize();
   return (
     <Modal
       isOpen={open}
       style={{
+        overlay: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: `${width > 1024 ? "0px" : "12px"}`,
+        },
         content: {
+          position: "initial",
           maxHeight: "391px",
-          maxWidth: "572px",
+          minWidth: `${width > 1024 ? "572px" : "100%"}`,
           borderRadius: "20px",
-          top: "50%",
-          left: "50%",
           background: "#F7F7F7",
-          transform: "translate(-50%, -50%)",
         },
       }}
     >
-      <div className="">
+      <>
         <div className="flex items-center justify-between">
           <p className="text-base">Message (Optional)</p>
           <p
@@ -46,7 +52,7 @@ const MessageModal = ({ open, setOpen, msgVal, setMsgVal }) => {
         >
           Submit{" "}
         </button>
-      </div>
+      </>
     </Modal>
   );
 };
