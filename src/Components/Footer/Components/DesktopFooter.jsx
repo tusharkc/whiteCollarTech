@@ -79,7 +79,9 @@ const DesktopFooter = () => {
                 <Link to={appPathName.homePagePath}>
                   <p className="cursor-pointer">Home</p>
                 </Link>
-                <p className="py-4 cursor-pointer">Career</p>
+                <Link to={appPathName.careerPath}>
+                  <p className="py-4 cursor-pointer">Career</p>
+                </Link>
                 <Link to={appPathName.aboutUsPath}>
                   <p className="cursor-pointer">About Us</p>
                 </Link>

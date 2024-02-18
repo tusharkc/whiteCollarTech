@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const HandsetFooter = () => {
   const quickLinkData = [
     { name: "Home", navigateTo: appPathName.homePagePath },
-    { name: "Career", navigateTo: appPathName.homePagePath },
+    { name: "Career", navigateTo: appPathName.careerPath },
     { name: "About Us", navigateTo: appPathName.aboutUsPath },
     { name: "Contact Us", navigateTo: appPathName.contactUsPath },
   ];
