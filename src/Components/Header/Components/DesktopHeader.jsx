@@ -111,17 +111,20 @@ const DesktopHeader = () => {
                 </p>
               </Link>
 
-              <p
-                className={`cursor-pointer font-${
-                  pathname == "/career" ? "bold" : "medium"
-                } ${
-                  isHeaderSticky && pathname == "/career"
-                    ? "text-[#0845B7]"
-                    : "text-black"
-                } ${!isHeaderSticky ? "text-white" : "text-black"}`}
-              >
-                Career
-              </p>
+              <Link to={appPathName.careerPath}>
+                <p
+                  className={`cursor-pointer font-${
+                    pathname == "/career" ? "bold" : "medium"
+                  } ${
+                    isHeaderSticky && pathname == "/career"
+                      ? "text-[#0845B7]"
+                      : "text-black"
+                  } ${!isHeaderSticky ? "text-white" : "text-black"}`}
+                >
+                  Career
+                </p>
+              </Link>
+
               <Link to={appPathName.contactUsPath}>
                 <p
                   className={`cursor-pointer font-${

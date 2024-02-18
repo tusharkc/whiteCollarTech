@@ -10,7 +10,6 @@ const HomePageCTA = () => {
   const [msgVal, setMsgVal] = useState("");
   const onFormSubmit = (e) => {
     e.preventDefault();
-
     navigate(appPathName.requestSubmittedSuccessPath);
   };
 
