@@ -5,6 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { appPathName } from "./data";
 import {
   AboutUs,
+  AddOrEditJob,
+  AdminJobsDashboard,
+  AdminLogin,
   Career,
   ContactUs,
   HomePage,
@@ -40,6 +43,22 @@ const router = createBrowserRouter([
   {
     path: appPathName.jobDetailPath,
     element: <JobDetail />,
+  },
+  {
+    path: appPathName.adminLoginPath,
+    element: <AdminLogin />,
+  },
+  {
+    path: appPathName.jobsDashboardPath,
+    element: <AdminJobsDashboard />,
+  },
+  {
+    path: appPathName.addAJob,
+    element: <AddOrEditJob />,
+  },
+  {
+    path: appPathName.editJob,
+    element: <AddOrEditJob />,
   },
 ]);
 
