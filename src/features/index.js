@@ -4,3 +4,6 @@ export * from "./ContactUs";
 export * from "./RequestSubmitted";
 export * from "./Careers";
 export * from "./JobDetail";
+export * from "./AdminLogin";
+export * from "./AdminJobs";
+export * from "./AddOrEditJob";
