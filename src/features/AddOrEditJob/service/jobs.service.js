@@ -23,6 +23,13 @@ export const jobApi = createApi({
       providesTags: ["jobs"],
     }),
 
+    getJobById: builder.query({
+      query: ({ jobId }) => ({
+        url: `/getJobById/${jobId}`,
+      }),
+      providesTags: ["jobs"],
+    }),
+
     addJob: builder.mutation({
       query: (data) => ({
         url: "/addJob",
@@ -32,7 +39,32 @@ export const jobApi = createApi({
 
       invalidatesTags: ["jobs"],
     }),
+
+    editJob: builder.mutation({
+      query: ({ id, data }) => ({
+        url: `/editJob/${id}`,
+        method: "PATCH",
+        body: data,
+      }),
+
+      invalidatesTags: ["jobs"],
+    }),
+
+    deleteJob: builder.mutation({
+      query: ({ id }) => ({
+        url: `/deleteJob/${id}`,
+        method: "DELETE",
+      }),
+
+      invalidatesTags: ["jobs"],
+    }),
   }),
 });
 
-export const { useGetAllJobsQuery, useAddJobMutation } = jobApi;
+export const {
+  useGetAllJobsQuery,
+  useAddJobMutation,
+  useGetJobByIdQuery,
+  useEditJobMutation,
+  useDeleteJobMutation,
+} = jobApi;

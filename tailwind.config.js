@@ -4,5 +4,9 @@ module.exports = {
   theme: {
     extend: {},
   },
+  purge: {
+    content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+    safelist: [/^react-quill/],
+  },
   plugins: [],
 };

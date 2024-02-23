@@ -3,42 +3,10 @@ import AdminJobCard from "./AdminJobCard/AdminJobCard";
 import { useNavigate } from "react-router-dom";
 import appPathName from "../../../data/appPathName";
 import { useGetAllJobsQuery } from "../../AddOrEditJob/service/jobs.service";
-import { useSelector } from "react-redux";
-
-const dummyData = [
-  {
-    id: "0",
-    title: "Computer System Analysts",
-    jobType: "Full Time",
-    experienceRequired: "2 - 5 Years",
-    location: "Nazareth PA",
-  },
-
-  {
-    id: "1",
-    title: "Computer System Analysts",
-    jobType: "Full Time",
-    experienceRequired: "2 - 5 Years",
-    location: "Nazareth PA",
-  },
-
-  {
-    id: "2",
-    title: "Computer System Analysts",
-    jobType: "Full Time",
-    experienceRequired: "2 - 5 Years",
-    location: "Nazareth PA",
-  },
-];
 
 const AdminJobsDashboard = () => {
   const navigate = useNavigate();
   const { data } = useGetAllJobsQuery();
-
-  const state = useSelector((state) => state);
-
-  console.log("state", state);
-  console.log("data", data);
 
   return (
     <div className="container mx-auto space-y-8 py-8">
@@ -51,9 +19,13 @@ const AdminJobsDashboard = () => {
         </button>
       </div>
 
-      {dummyData?.map((job) => (
-        <AdminJobCard job={job} />
-      ))}
+      {data?.data?.length > 0 ? (
+        data?.data?.map((job) => <AdminJobCard job={job} />)
+      ) : (
+        <p className="p-8 bg-neutral-200 rounded-lg shadow-xl border border-zinc-500">
+          No job added yet
+        </p>
+      )}
     </div>
   );
 };

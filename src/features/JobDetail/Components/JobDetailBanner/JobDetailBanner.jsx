@@ -10,7 +10,11 @@ const scrollSectionInView = (sectionName) => {
   }, 400);
 };
 
-const JobDetailBanner = () => {
+const JobDetailBanner = ({ jobData }) => {
+  const htmlString = jobData?.jobDescription || "";
+  const strippedString = htmlString.replace(/<[^>]*>?/gm, ""); // Remove HTML tags
+  const first100Chars = strippedString.slice(0, 100); // Get first  100 characters
+
   return (
     <div className="relative">
       <img
@@ -31,17 +35,14 @@ const JobDetailBanner = () => {
             </p>
           </div>
 
-          <p className="text-[2.5rem] mt-20">UI/UX Designer</p>
-          <p className="text-lg max-w-xl my-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-          </p>
+          <p className="text-[2.5rem] mt-20">{jobData?.title}</p>
+          <p className="text-lg max-w-xl my-6">{first100Chars}...</p>
 
           <button
             className="bg-white text-black py-2 px-4 rounded-lg"
             onClick={() => scrollSectionInView("applyToJob")}
           >
-            Apply for UI/UX Designer
+            Apply for {jobData?.title}
           </button>
         </div>
       </div>

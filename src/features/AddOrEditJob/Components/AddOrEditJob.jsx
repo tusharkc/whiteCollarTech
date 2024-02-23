@@ -1,25 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { IconButton } from "@mui/material";
 import { CloseCircleOutlined } from "@ant-design/icons";
 import Snackbar from "@mui/material/Snackbar";
-import { useAddJobMutation } from "../service/jobs.service";
+import {
+  useAddJobMutation,
+  useEditJobMutation,
+  useGetJobByIdQuery,
+} from "../service/jobs.service";
 
 const AddOrEditJob = () => {
   const { id } = useParams();
   const isEditingAJob = id ? true : false;
   const [addJob] = useAddJobMutation();
+  const { data: existingJobData } = useGetJobByIdQuery({ jobId: id });
+  const [editJob] = useEditJobMutation();
 
   const [formState, setFormState] = useState({
     title: "",
     jobDescription: "",
     rolesAndResponsibilities: "",
     qualifications: "",
-    minYearExperience: "",
-    maxYearExperience: "",
-    jobType: "",
+    minYearExperience: 0,
+    maxYearExperience: 1,
+    jobType: "Full-Time",
+    city: "",
+    jobCategory: "Development",
   });
 
   const [formHasError, setFormHasError] = useState(false);
@@ -63,13 +71,25 @@ const AddOrEditJob = () => {
       (value) => value === ""
     );
 
-    console.log("formState", formState);
     if (hasEmptyField) {
       setFormHasError(true);
+    } else if (isEditingAJob) {
+      await editJob({ id: id, data: formState });
     } else {
       await addJob(formState);
     }
   };
+
+  useEffect(() => {
+    if (isEditingAJob) {
+      Object.entries(existingJobData?.data || {}).forEach((formItem) => {
+        setFormState((prevState) => ({
+          ...prevState,
+          [formItem[0]]: formItem[1],
+        }));
+      });
+    }
+  }, [existingJobData?.data]);
 
   const action = (
     <React.Fragment>
@@ -110,6 +130,23 @@ const AddOrEditJob = () => {
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
               placeholder="Enter job title"
               value={formState.title}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="city"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Job Ciy
+            </label>
+            <input
+              type="text"
+              name="city"
+              id="city"
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter job City"
+              value={formState.city}
               onChange={handleInputChange}
             />
           </div>
@@ -221,9 +258,29 @@ const AddOrEditJob = () => {
               value={formState.jobType}
               onChange={handleInputChange}
             >
-              <option value="fulltime">Full-time</option>
-              <option value="parttime">Part-time</option>
-              <option value="freelancer">Freelancer</option>
+              <option value="Full-Time">Full-time</option>
+              <option value="Part-Time">Part-time</option>
+              <option value="Freelancer">Freelancer</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              htmlFor="jobType"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Job Category
+            </label>
+            <select
+              name="jobCategory"
+              id="jobCategory"
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+              value={formState.jobCategory}
+              onChange={handleInputChange}
+            >
+              <option value="Sales">Sales</option>
+              <option value="Design">Design</option>
+              <option value="Development">Development</option>
             </select>
           </div>
           <div>

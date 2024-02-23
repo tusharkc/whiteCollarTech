@@ -1,0 +1,26 @@
+/* In your tailwind.css file */
+
+/* Custom class for H1 headings */
+.custom-h1 {
+  @apply text-4xl font-bold;
+}
+
+/* Custom class for H2 headings */
+.custom-h2 {
+  @apply text-3xl font-semibold;
+}
+
+/* Custom class for H3 headings */
+.custom-h3 {
+  @apply text-2xl font-medium;
+}
+
+/* Custom class for ordered lists */
+.custom-ol {
+  @apply list-decimal list-inside;
+}
+
+/* Custom class for unordered lists */
+.custom-ul {
+  @apply list-disc list-inside;
+}
