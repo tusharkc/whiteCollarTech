@@ -5,18 +5,20 @@ import "react-quill/dist/quill.snow.css";
 import { IconButton } from "@mui/material";
 import { CloseCircleOutlined } from "@ant-design/icons";
 import Snackbar from "@mui/material/Snackbar";
+import { useAddJobMutation } from "../service/jobs.service";
 
 const AddOrEditJob = () => {
   const { id } = useParams();
   const isEditingAJob = id ? true : false;
+  const [addJob] = useAddJobMutation();
 
   const [formState, setFormState] = useState({
-    jobTitle: "",
+    title: "",
     jobDescription: "",
-    rolesResponsibilities: "",
+    rolesAndResponsibilities: "",
     qualifications: "",
-    minExperience: "",
-    maxExperience: "",
+    minYearExperience: "",
+    maxYearExperience: "",
     jobType: "",
   });
 
@@ -45,8 +47,8 @@ const AddOrEditJob = () => {
     }));
   };
 
-  const maxExperienceOptions = () => {
-    const start = parseInt(formState.minExperience || 0, 10) + 1;
+  const maxYearExperienceOptions = () => {
+    const start = parseInt(formState.minYearExperience || 0, 10) + 1;
     return Array.from({ length: 51 - start }, (_, i) => (
       <option key={i + start} value={i + start}>
         {i + start}
@@ -54,13 +56,19 @@ const AddOrEditJob = () => {
     ));
   };
 
-  const onFormSubmit = (e) => {
+  const onFormSubmit = async (e) => {
     e.preventDefault();
-    Object.entries(formState).map((item) => {
-      if (!item[1]) {
-        setFormHasError(true);
-      }
-    });
+
+    const hasEmptyField = Object.values(formState).some(
+      (value) => value === ""
+    );
+
+    console.log("formState", formState);
+    if (hasEmptyField) {
+      setFormHasError(true);
+    } else {
+      await addJob(formState);
+    }
   };
 
   const action = (
@@ -90,18 +98,18 @@ const AddOrEditJob = () => {
         <form onSubmit={onFormSubmit} className="space-y-12">
           <div>
             <label
-              htmlFor="jobTitle"
+              htmlFor="title"
               className="block text-sm font-medium text-gray-700"
             >
               Job Title
             </label>
             <input
               type="text"
-              name="jobTitle"
-              id="jobTitle"
+              name="title"
+              id="title"
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
               placeholder="Enter job title"
-              value={formState.jobTitle}
+              value={formState.title}
               onChange={handleInputChange}
             />
           </div>
@@ -122,15 +130,15 @@ const AddOrEditJob = () => {
           </div>
           <div>
             <label
-              htmlFor="rolesResponsibilities"
+              htmlFor="rolesAndResponsibilities"
               className="block text-sm font-medium text-gray-700"
             >
               Roles & Responsibilities
             </label>
             <ReactQuill
-              value={formState.rolesResponsibilities}
+              value={formState.rolesAndResponsibilities}
               onChange={(content) =>
-                handleEditorChange(content, "rolesResponsibilities")
+                handleEditorChange(content, "rolesAndResponsibilities")
               }
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
             />
@@ -154,16 +162,16 @@ const AddOrEditJob = () => {
           <div className="flex items-center justify-center space-x-8">
             <div className="w-6/12">
               <label
-                htmlFor="minExperience"
+                htmlFor="minYearExperience"
                 className="block text-sm font-medium text-gray-700"
               >
                 Minimum Years of Experience
               </label>
               <select
-                name="minExperience"
-                id="minExperience"
+                name="minYearExperience"
+                id="minYearExperience"
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                value={formState.minExperience}
+                value={formState.minYearExperience}
                 onChange={handleInputChange}
               >
                 {Array.from({ length: 51 }, (_, i) => (
@@ -176,19 +184,19 @@ const AddOrEditJob = () => {
 
             <div className="w-6/12">
               <label
-                htmlFor="maxExperience"
+                htmlFor="maxYearExperience"
                 className="block text-sm font-medium text-gray-700"
               >
                 Maximum Years of Experience
               </label>
               <select
-                name="maxExperience"
-                id="maxExperience"
+                name="maxYearExperience"
+                id="maxYearExperience"
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                value={formState.maxExperience}
+                value={formState.maxYearExperience}
                 onChange={handleInputChange}
               >
-                {maxExperienceOptions()}
+                {maxYearExperienceOptions()}
 
                 {/* {Array.from({ length: 51 }, (_, i) => (
                   <option key={i} value={i}>

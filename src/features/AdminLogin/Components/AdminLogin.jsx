@@ -5,8 +5,10 @@ import appPathName from "../../../data/appPathName";
 import Snackbar from "@mui/material/Snackbar";
 import { IconButton } from "@mui/material";
 import { CloseCircleOutlined } from "@ant-design/icons";
+import { useLogInMutation } from "../../../services/user.services";
 
 const AdminLogin = () => {
+  const [login] = useLogInMutation();
   const navigate = useNavigate();
   const [adminCredentials, setAdminCredentials] = useState({
     email: "",
@@ -23,17 +25,14 @@ const AdminLogin = () => {
     setOpenErrorSnackBar(false);
   };
 
-  const handleFormSubmit = () => {
-    const isVerifiedAdmin = adminCredentialsData?.find(
-      (i) =>
-        i.email === adminCredentials?.email &&
-        i.password === adminCredentials?.password
-    );
-
-    if (isVerifiedAdmin) {
-      navigate(appPathName.jobsDashboardPath);
-    } else {
-      setOpenErrorSnackBar(true);
+  const handleFormSubmit = async () => {
+    if (adminCredentials.email && adminCredentials.password) {
+      const response = await login(adminCredentials);
+      if (response.error) {
+        setOpenErrorSnackBar(true);
+      } else {
+        navigate(appPathName.jobsDashboardPath);
+      }
     }
   };
 

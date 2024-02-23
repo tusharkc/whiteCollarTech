@@ -2,6 +2,8 @@ import React from "react";
 import AdminJobCard from "./AdminJobCard/AdminJobCard";
 import { useNavigate } from "react-router-dom";
 import appPathName from "../../../data/appPathName";
+import { useGetAllJobsQuery } from "../../AddOrEditJob/service/jobs.service";
+import { useSelector } from "react-redux";
 
 const dummyData = [
   {
@@ -31,6 +33,12 @@ const dummyData = [
 
 const AdminJobsDashboard = () => {
   const navigate = useNavigate();
+  const { data } = useGetAllJobsQuery();
+
+  const state = useSelector((state) => state);
+
+  console.log("state", state);
+  console.log("data", data);
 
   return (
     <div className="container mx-auto space-y-8 py-8">
