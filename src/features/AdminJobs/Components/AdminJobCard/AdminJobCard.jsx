@@ -41,6 +41,11 @@ const AdminJobCard = ({ job }) => {
             </button>
           </Link>
 
+          <Link to={`/${job?.id}/job-applications`}>
+            <button className="bg-[#0055A5] text-white px-6 py-2 rounded-lg">
+              View job applications
+            </button>
+          </Link>
           <button
             className="bg-red-500 text-white px-6 py-2 rounded-lg"
             onClick={async () => await deleteJob({ id: job.id })}

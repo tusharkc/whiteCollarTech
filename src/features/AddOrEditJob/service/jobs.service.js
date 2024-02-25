@@ -16,13 +16,6 @@ export const jobApi = createApi({
   tagTypes: ["jobs"],
 
   endpoints: (builder) => ({
-    getAllJobs: builder.query({
-      query: () => ({
-        url: "/getAllJobs",
-      }),
-      providesTags: ["jobs"],
-    }),
-
     getJobById: builder.query({
       query: ({ jobId }) => ({
         url: `/getJobById/${jobId}`,
@@ -62,7 +55,6 @@ export const jobApi = createApi({
 });
 
 export const {
-  useGetAllJobsQuery,
   useAddJobMutation,
   useGetJobByIdQuery,
   useEditJobMutation,

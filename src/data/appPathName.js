@@ -8,7 +8,8 @@ const appPathName = {
   adminLoginPath: "/admin-login",
   jobsDashboardPath: "/jobs-dashboard",
   addAJob: "/add-job",
-  editJob: "edit/:id",
+  editJob: "/edit/:id",
+  viewJobApplication: "/:id/job-applications",
 };
 
 export default appPathName;

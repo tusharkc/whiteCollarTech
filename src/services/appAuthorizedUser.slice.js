@@ -9,7 +9,14 @@ const initialState = {
 export const appAuthorizedUser = createSlice({
   name: "appAuthorizedUser",
   initialState,
-  reducers: {},
+  reducers: {
+    logOutAdminUser: (state, action) => {
+      state.appToken = null;
+      state.user = null;
+      localStorage.removeItem("appToken");
+      localStorage.removeItem("appUser");
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addMatcher(
@@ -38,5 +45,7 @@ export const appAuthorizedUser = createSlice({
       );
   },
 });
+
+export const { logOutAdminUser } = appAuthorizedUser.actions;
 
 export default appAuthorizedUser.reducer;

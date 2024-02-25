@@ -1,25 +1,100 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import applyNowCta from "../../../../assets/images/applyNowCta.png";
 import { appPathName } from "../../../../data";
 import uploadResumeBg from "../../../../assets/images/uploadResumeBg.png";
 import CloseIcon from "@mui/icons-material/Close";
+import { useSendJobApplicationMutation } from "../../services/jobDetail.service";
+import { IconButton, Snackbar } from "@mui/material";
+import { CloseCircleOutlined } from "@ant-design/icons";
 
 const JobApply = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
   const [resumeFile, setResumeFile] = useState();
+  const [formValue, setFormValue] = useState({
+    candidateFirstName: "",
+    candidateLastName: "",
+    candidateEmail: "",
+    candidateNumber: "",
+    policyConsent: false,
+  });
+  const [formHasError, setFormHasError] = useState(false);
+  const [sendApplication] = useSendJobApplicationMutation();
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormValue((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   const handleResumeUpload = (e) => {
     setResumeFile(e.target.files[0]);
   };
 
-  const onFormSubmit = (e) => {
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setFormHasError(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={handleClose}
+      >
+        <CloseCircleOutlined fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
+  const onFormSubmit = async (e) => {
     e.preventDefault();
-    navigate(appPathName.requestSubmittedSuccessPath);
+    try {
+      const hasEmptyField = Object.values(formValue).some(
+        (value) => value === "" || value === false
+      );
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      if (
+        hasEmptyField ||
+        !resumeFile ||
+        !emailRegex.test(formValue.candidateEmail)
+      ) {
+        setFormHasError(true);
+      } else {
+        const formData = new FormData();
+        Object.entries(formValue).forEach((item) => {
+          formData.append(item[0], item[1]);
+        });
+        formData.append("resume", resumeFile);
+        formData.append("jobId", id);
+        await sendApplication({ data: formData });
+        navigate(appPathName.requestSubmittedSuccessPath);
+      }
+    } catch (error) {
+      setFormHasError(true);
+      console.log("error", error);
+    }
   };
 
   return (
     <>
+      <Snackbar
+        open={formHasError}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="Invalid or improper information provided"
+        action={action}
+      />
+
       <input
         type="file"
         id="resumeUpload"
@@ -90,21 +165,27 @@ const JobApply = () => {
               )}
             </div>
 
-            <form onSubmit={onFormSubmit}>
+            <form noValidate onSubmit={onFormSubmit}>
               <div className="grid grid-cols-12 gap-4 mt-16">
                 <input
                   required
                   className="col-span-12 sm:col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                   placeholder="First Name"
-                  name="firstName"
-                  id="firstName"
+                  name="candidateFirstName"
+                  id="candidateFirstName"
+                  type="text"
+                  value={formValue.candidateFirstName}
+                  onChange={handleInputChange}
                 />
                 <input
                   required
                   className="col-span-12 sm:col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                   placeholder="Last Name"
-                  name="lastName"
-                  id="lastName"
+                  name="candidateLastName"
+                  id="candidateLastName"
+                  type="text"
+                  value={formValue.candidateLastName}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -113,22 +194,36 @@ const JobApply = () => {
                   required
                   className="col-span-12 sm:col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                   placeholder="Email"
-                  name="email"
-                  id="email"
+                  name="candidateEmail"
+                  id="candidateEmail"
+                  type="text"
+                  value={formValue.candidateEmail}
+                  onChange={handleInputChange}
                 />
                 <input
                   required
                   className="col-span-12 sm:col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                   placeholder="Phone Number"
-                  name="phoneNumber"
-                  id="phoneNumber"
+                  name="candidateNumber"
+                  id="candidateNumber"
+                  onChange={handleInputChange}
+                  value={formValue.candidateNumber}
                 />
               </div>
 
               <label className="flex items-start justify-center gap-2 mt-14">
                 <div>
                   <input
+                    name="policyConsent"
+                    id="policyConsent"
+                    value={formValue.policyConsent}
                     required
+                    onChange={(e) =>
+                      setFormValue((prevState) => ({
+                        ...prevState,
+                        policyConsent: !formValue.policyConsent,
+                      }))
+                    }
                     style={{ height: "25px", width: "25px" }}
                     type="checkbox"
                   />

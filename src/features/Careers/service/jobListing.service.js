@@ -16,15 +16,7 @@ export const careerListingApi = createApi({
       }),
       providesTags: ["careerListing"],
     }),
-
-    getCareerById: builder.query({
-      query: ({ id }) => ({
-        url: `/getCareerById/${id}`,
-      }),
-      providesTags: ["careerListing"],
-    }),
   }),
 });
 
-export const { useGetAllCareersQuery, useGetCareerByIdQuery } =
-  careerListingApi;
+export const { useGetAllCareersQuery } = careerListingApi;
