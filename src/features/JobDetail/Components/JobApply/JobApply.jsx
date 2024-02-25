@@ -20,6 +20,7 @@ const JobApply = () => {
     policyConsent: false,
   });
   const [formHasError, setFormHasError] = useState(false);
+  const [uploadErrorMessage, setUploadErrorMessage] = useState("");
   const [sendApplication] = useSendJobApplicationMutation();
 
   const handleInputChange = (event) => {
@@ -31,7 +32,28 @@ const JobApply = () => {
   };
 
   const handleResumeUpload = (e) => {
-    setResumeFile(e.target.files[0]);
+    const file = e.target.files[0];
+    if (file) {
+      const fileSizeInMB = file.size / (1024 * 1024);
+      const fileType = file.type;
+      const validFileType = fileType === "application/pdf";
+      const validFileSize = fileSizeInMB <= 5;
+
+      if (!validFileType) {
+        setUploadErrorMessage("Please upload a PDF file.");
+        setFormHasError(true);
+        return;
+      }
+
+      if (!validFileSize) {
+        setUploadErrorMessage("The file size should not exceed  5MB.");
+        setFormHasError(true);
+        return;
+      }
+
+      setResumeFile(file);
+      setUploadErrorMessage(""); // Clear the error message if the file is valid
+    }
   };
 
   const handleClose = (event, reason) => {
@@ -88,10 +110,13 @@ const JobApply = () => {
   return (
     <>
       <Snackbar
+        ContentProps={{ sx: { background: "#eb4646" } }}
         open={formHasError}
         autoHideDuration={6000}
         onClose={handleClose}
-        message="Invalid or improper information provided"
+        message={
+          uploadErrorMessage || "Invalid or improper information provided"
+        }
         action={action}
       />
 
