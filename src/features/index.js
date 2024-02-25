@@ -7,3 +7,4 @@ export * from "./JobDetail";
 export * from "./AdminLogin";
 export * from "./AdminJobs";
 export * from "./AddOrEditJob";
+export * from "./JobApplications";

@@ -1,76 +1,110 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import "react-quill/dist/quill.snow.css";
+import parse from "html-react-parser";
 
-const JobDescription = () => {
+const JobDescription = ({ jobData }) => {
+  const jobDescriptionContainerRef = useRef(null);
+  const rolesAndResponsibilitiesContainerRef = useRef(null);
+  const qualificationsContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (jobDescriptionContainerRef.current && jobData?.jobDescription) {
+      const container = jobDescriptionContainerRef.current;
+      setTimeout(() => {
+        container
+          .querySelectorAll("h1")
+          .forEach((el) => el.classList.add("custom-h1"));
+        container
+          .querySelectorAll("h2")
+          .forEach((el) => el.classList.add("custom-h2"));
+        container
+          .querySelectorAll("h3")
+          .forEach((el) => el.classList.add("custom-h3"));
+        container
+          .querySelectorAll("ol")
+          .forEach((el) => el.classList.add("custom-ol"));
+        container
+          .querySelectorAll("ul")
+          .forEach((el) => el.classList.add("custom-ul"));
+      }, 0);
+    }
+  }, [jobData?.jobDescription]);
+
+  useEffect(() => {
+    if (
+      rolesAndResponsibilitiesContainerRef.current &&
+      jobData?.rolesAndResponsibilities
+    ) {
+      const container = rolesAndResponsibilitiesContainerRef.current;
+      setTimeout(() => {
+        container
+          .querySelectorAll("h1")
+          .forEach((el) => el.classList.add("custom-h1"));
+        container
+          .querySelectorAll("h2")
+          .forEach((el) => el.classList.add("custom-h2"));
+        container
+          .querySelectorAll("h3")
+          .forEach((el) => el.classList.add("custom-h3"));
+        container
+          .querySelectorAll("ol")
+          .forEach((el) => el.classList.add("custom-ol"));
+        container
+          .querySelectorAll("ul")
+          .forEach((el) => el.classList.add("custom-ul"));
+      }, 0);
+    }
+  }, [jobData?.rolesAndResponsibilities]);
+
+  useEffect(() => {
+    if (qualificationsContainerRef.current && jobData?.qualifications) {
+      const container = qualificationsContainerRef.current;
+      setTimeout(() => {
+        container
+          .querySelectorAll("h1")
+          .forEach((el) => el.classList.add("custom-h1"));
+        container
+          .querySelectorAll("h2")
+          .forEach((el) => el.classList.add("custom-h2"));
+        container
+          .querySelectorAll("h3")
+          .forEach((el) => el.classList.add("custom-h3"));
+        container
+          .querySelectorAll("ol")
+          .forEach((el) => el.classList.add("custom-ol"));
+        container
+          .querySelectorAll("ul")
+          .forEach((el) => el.classList.add("custom-ul"));
+      }, 0);
+    }
+  }, [jobData?.qualifications]);
+
   return (
     <div className="container mx-auto flex items-center justify-center">
       <div className="py-16 mx-[80px] space-y-24">
         {/* Job Overview */}
-
-        <ul className="list-disc pl-3 leading-relaxed tracking-wider space-y-8 font-light">
-          <li>
-            We’re looking for multifaceted, collaborative designers to work on
-            everything from website design to mobile app designs. You will have
-            an opportunity to define and reinvent the digital space, and a
-            passion for doing just that is critical—we want people who believe
-            in their skills and their perspective.
-          </li>
-
-          <li>
-            We’re looking for multifaceted, collaborative designers to work on
-            everything from website design to mobile app designs. You will have
-            an opportunity to define and reinvent the digital space, and a
-            passion for doing just that is critical—we want people who believe
-            in their skills and their perspective.
-          </li>
-        </ul>
+        <div className="py-16" ref={jobDescriptionContainerRef}>
+          {parse(`${jobData?.jobDescription}`)}
+        </div>
 
         {/* Roles and Responsibilities*/}
 
         <div className="space-y-6">
           <p className="text-[2.5rem] font-light">Roles + Responsibilities:</p>
 
-          <ul className="list-disc pl-3 leading-relaxed tracking-wider space-y-8 font-light">
-            <li>
-              You’ll work on everything from high-end UI/UX to art direction.
-              From typography to iconography. From sketches to illustrations.
-              From design systems to grid systems. And if you know a little bit
-              of motion graphics, you’ve just jumped the queue!
-            </li>
-
-            <li>
-              You’ll work on everything from high-end UI/UX to art direction.
-              From typography to iconography. From sketches to illustrations.
-              From design systems to grid systems. And if you know a little bit
-              of motion graphics, you’ve just jumped the queue!
-            </li>
-            <li>
-              You’ll work on everything from high-end UI/UX to art direction.
-              From typography to iconography. From sketches to illustrations.
-              From design systems to grid systems. And if you know a little bit
-              of motion graphics, you’ve just jumped the queue!
-            </li>
-            <li>
-              You’ll work on everything from high-end UI/UX to art direction.
-              From typography to iconography. From sketches to illustrations.
-              From design systems to grid systems. And if you know a little bit
-              of motion graphics, you’ve just jumped the queue!
-            </li>
-          </ul>
+          <div className="py-16" ref={rolesAndResponsibilitiesContainerRef}>
+            {parse(`${jobData?.rolesAndResponsibilities}`)}
+          </div>
         </div>
-
         {/* Qualification */}
-
         <div className="space-y-6">
           <p className="text-[2.5rem] font-light">
             What it takes to be one of us!
           </p>
 
-          <ul className="list-disc pl-3 leading-relaxed tracking-wider space-y-8 font-light">
-            <li>Any Bachelor’s degree or diploma, multimedia courses.</li>
-            <li>Any Bachelor’s degree or diploma, multimedia courses.</li>
-            <li>Any Bachelor’s degree or diploma, multimedia courses.</li>
-            <li>Any Bachelor’s degree or diploma, multimedia courses.</li>
-          </ul>
+          <div className="py-16" ref={qualificationsContainerRef}>
+            {parse(`${jobData?.qualifications}`)}
+          </div>
         </div>
       </div>
     </div>

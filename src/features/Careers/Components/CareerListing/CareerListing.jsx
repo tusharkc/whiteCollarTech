@@ -2,6 +2,7 @@ import { Box, Tab, Tabs } from "@mui/material";
 import React, { useState } from "react";
 import { CustomTabPanel } from "../../../../Components";
 import Jobs from "./Jobs";
+import { useGetAllCareersQuery } from "../../service/jobListing.service";
 
 function a11yProps(index) {
   return {
@@ -16,6 +17,17 @@ const CareerListing = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const { data: career } = useGetAllCareersQuery({
+    jobCategory:
+      value === 0
+        ? "All Positions"
+        : value === 1
+        ? "Development"
+        : value === 2
+        ? "Sales"
+        : "Design",
+  });
 
   return (
     <div className="py-12 container mx-auto">
@@ -42,17 +54,7 @@ const CareerListing = () => {
           </Tabs>
 
           <CustomTabPanel value={value} index={value}>
-            <Jobs
-              jobsData={[
-                {
-                  id: "0",
-                  title: "Computer System Analysts",
-                  jobType: "Full Time",
-                  experienceRequired: "2 - 5 Years",
-                  location: "Nazareth PA",
-                },
-              ]}
-            />
+            <Jobs jobsData={career?.data} />
           </CustomTabPanel>
         </Box>
       </div>

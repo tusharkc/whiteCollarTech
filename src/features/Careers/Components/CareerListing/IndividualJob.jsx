@@ -14,11 +14,13 @@ const IndividualJob = ({ job }) => {
         <div className="flex items-center space-x-16">
           <span className="flex items-center space-x-4">
             <WorkOutlineOutlinedIcon style={{ color: "#0054a4" }} />
-            <p>{job?.experienceRequired}</p>
+            <p>
+              {job?.minYearExperience} - {job?.maxYearExperience} Years
+            </p>
           </span>
           <span className="flex items-center space-x-4">
             <LocationOnOutlinedIcon style={{ color: "#0054a4" }} />
-            <p>{job?.location}</p>
+            <p>{job?.city}</p>
           </span>
           <span className="flex items-center space-x-4">
             <AccessTimeOutlinedIcon style={{ color: "#0054a4" }} />
