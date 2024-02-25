@@ -6,23 +6,23 @@ const wcTeamData = [
   {
     imgSrc: teamDummyImg1,
     memberInfo:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    memberDesignation: "UI/UX Designer",
-    memberName: "Yaman Bhavsar",
+      "Timothy is an energetic, dedicated, organized, and highly detail-oriented HR professional who has over 15 years of management experience. He is known for his excellent skills in onboarding new hires, I-9 compliance, immigration process as well as office management.",
+    memberDesignation: "Human Resource Manager",
+    memberName: "Timothy Vanderhey",
   },
   {
     imgSrc: teamDummyImg2,
     memberInfo:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    memberDesignation: "Content Writer",
-    memberName: "Shikha Thakkar",
+      "Harsh is known for management consulting, business and corporate training, project management, strategic planning, and business analytics. With more than 15 years of work experience in the industry, he is one of our most valuable assets.",
+    memberDesignation: "Project Manager",
+    memberName: "Harsh Thakkar",
   },
   {
     imgSrc: teamDummyImg3,
     memberInfo:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    memberDesignation: "Project Manager",
-    memberName: "Harshil Sharma",
+      "Kirti holds an experience of over 13 years in understanding the opportunities and challenges of an organization and providing strategically aligned cost-effective solutions. Being our manager of regulatory affairs and quality compliance, she has always improved and supported various lab and enterprise solutions with her majority of tenure being spent within FDA regulated environments.",
+    memberDesignation: "Business Manager",
+    memberName: "Kirti Zinzuwadia",
   },
 ];
 export default wcTeamData;
