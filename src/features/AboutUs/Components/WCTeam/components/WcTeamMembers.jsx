@@ -5,6 +5,7 @@ const WcTeamMembers = ({
   memberName,
   memberDesignation,
   memberInfo,
+  linkedInUrl,
 }) => {
   const [divHovered, setDivHovered] = useState(false);
 
@@ -14,10 +15,10 @@ const WcTeamMembers = ({
         <div
           onMouseEnter={() => setDivHovered(true)}
           onMouseLeave={() => setDivHovered(false)}
-          className="relative overflow-hidden bg-cover bg-no-repeat"
+          className="relative overflow-hidden bg-cover bg-no-repeat h-[445px]"
         >
           <img
-            className={`w-full transition duration-300 ease-in-out ${
+            className={`w-full transition duration-300 ease-in-out h-full ${
               divHovered ? "scale-110" : ""
             }`}
             src={imgSrc}
@@ -39,7 +40,9 @@ const WcTeamMembers = ({
 
           <p className="text-sm sm:text-xl">{memberDesignation}</p>
 
-          <img src={linkedinIcon} className="mx-0 px-0 mt-3" />
+          <a target="_blank" href={linkedInUrl}>
+            <img src={linkedinIcon} className="mx-0 px-0 mt-3" />
+          </a>
         </div>
       </div>
     </>
