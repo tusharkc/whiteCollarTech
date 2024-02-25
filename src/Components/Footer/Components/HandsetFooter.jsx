@@ -17,6 +17,7 @@ const HandsetFooter = () => {
     { name: "Career", navigateTo: appPathName.careerPath },
     { name: "About Us", navigateTo: appPathName.aboutUsPath },
     { name: "Contact Us", navigateTo: appPathName.contactUsPath },
+    { name: "For Admins", navigateTo: appPathName.adminLoginPath },
   ];
 
   const serviceData = [

@@ -88,6 +88,9 @@ const DesktopFooter = () => {
                 <Link to={appPathName.contactUsPath}>
                   <p className="py-4 cursor-pointer">Contact Us</p>
                 </Link>
+                <Link to={appPathName.adminLoginPath}>
+                  <p className="cursor-pointer">For Admins</p>
+                </Link>
               </div>
               <div>
                 <h5 className="font-bold text-2xl pb-6">Services</h5>
