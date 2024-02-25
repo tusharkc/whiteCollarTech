@@ -3,11 +3,14 @@
   "homepage": ".",
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "start:development": "vite --mode development",
+  "start:staging": "vite --mode staging",
+  "start:production": "vite --mode production"
+},
   "dependencies": {
     "@ant-design/icons": "^5.3.0",
     "@emotion/react": "^11.11.3",
