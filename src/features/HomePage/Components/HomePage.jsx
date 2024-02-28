@@ -10,6 +10,7 @@ import HomePageCTA from "./HomePageCTA/HomePageCTA";
 import HomePageHeader from "./HomePageHeader/HomePageHeader";
 
 const HomePage = () => {
+  console.log("env file", `${import.meta.env.VITE_BACKEND_BASE_URL}/api/job`);
   return (
     <>
       <Header />
