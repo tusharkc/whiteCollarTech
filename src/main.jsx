@@ -72,6 +72,10 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
+      {console.log(
+        "`${import.meta.env.VITE_BACKEND_BASE_URL}/api/job`,",
+        `${import.meta.env.VITE_BACKEND_BASE_URL}/api/job`
+      )}
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
