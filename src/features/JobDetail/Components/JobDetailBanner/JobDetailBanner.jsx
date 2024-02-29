@@ -23,7 +23,7 @@ const JobDetailBanner = ({ jobData }) => {
         className="w-full h-[70vh] sm:h-auto object-cover"
       />
 
-      <div className="absolute inset-0 flex flex-col text-white justify-center container mx-[140px]">
+      <div className="absolute inset-0 flex flex-col text-white justify-center container px-4 md:px-0 md:mx-[140px]">
         <div className="">
           <div className="flex items-center">
             <p className="text-lg md:text-base max-w-prose text-center text-[#818181]">
@@ -35,7 +35,9 @@ const JobDetailBanner = ({ jobData }) => {
             </p>
           </div>
 
-          <p className="text-[2.5rem] mt-20">{jobData?.title}</p>
+          <p className="text-[1.5rem] md:text-[2.5rem] mt-20">
+            {jobData?.title}
+          </p>
           <p className="text-lg max-w-xl my-6">{first100Chars}...</p>
 
           <button

@@ -214,7 +214,7 @@ const JobApply = () => {
                 />
               </div>
 
-              <div className="grid grid-cols-12 gap-4 mt-16">
+              <div className="grid grid-cols-12 gap-4 mt-4 md:mt-16">
                 <input
                   required
                   className="col-span-12 sm:col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"

@@ -81,7 +81,7 @@ const JobDescription = ({ jobData }) => {
 
   return (
     <div className="container mx-auto flex items-center justify-center">
-      <div className="py-16 mx-[80px] space-y-24">
+      <div className="py-16 px-4 md:px-0 md:mx-[80px] space-y-24">
         {/* Job Overview */}
         <div className="py-16" ref={jobDescriptionContainerRef}>
           {parse(`${jobData?.jobDescription}`)}

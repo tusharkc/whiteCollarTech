@@ -8,9 +8,9 @@ const CareerAdvantageGrid = () => {
         <p className="text-center text-[3rem] font-light py-20">
           Experience Awesomeness
         </p>
-        <div className="grid grid-cols-12 gap-28">
+        <div className="grid grid-cols-12 gap-8 md:gap-28">
           {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div className="col-span-4">
+            <div className="col-span-12 md:col-span-4">
               <CareerAdvantageItem
                 title={"Lorem ipsum"}
                 description={
