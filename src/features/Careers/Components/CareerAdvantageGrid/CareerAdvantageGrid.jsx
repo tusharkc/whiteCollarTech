@@ -1,5 +1,6 @@
 import React from "react";
 import CareerAdvantageItem from "./CareerAdvantageItem";
+import { careerListingData } from "../../../../data/careerListingData";
 
 const CareerAdvantageGrid = () => {
   return (
@@ -9,13 +10,11 @@ const CareerAdvantageGrid = () => {
           Experience Awesomeness
         </p>
         <div className="grid grid-cols-12 gap-8 md:gap-28">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
+          {careerListingData.map((item) => (
             <div className="col-span-12 md:col-span-4">
               <CareerAdvantageItem
-                title={"Lorem ipsum"}
-                description={
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
-                }
+                title={item?.title}
+                description={item?.description}
               />
             </div>
           ))}

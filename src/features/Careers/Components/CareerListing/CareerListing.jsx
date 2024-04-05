@@ -33,10 +33,12 @@ const CareerListing = () => {
     <div className="py-12 container mx-auto">
       <div className="mx-4 sm:mx-[140px] ">
         <div className="space-y-4">
-          <p className="text-center text-[3rem] font-light">Career Listing</p>
+          <p className="text-center text-[3rem] font-light">
+            Job Roles and Openings
+          </p>
           <p className="font-light text-center">
-            Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit. Ut
-            elit tellus, luctus nec.
+            Check out the below open positions in our company. We are actively
+            hiring and are open to speaking soon!
           </p>
         </div>
 
