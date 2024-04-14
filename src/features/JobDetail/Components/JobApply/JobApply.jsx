@@ -135,12 +135,12 @@ const JobApply = () => {
         <div className="col-span-12 sm:col-span-7 place-self-center">
           <div className="max-w-xl px-6">
             <h4 className="text-4xl sm:text-5xl font-light leading-snug text-center sm:text-left">
-              Lorem ipsum dolor sit
+              Start your story with us!
             </h4>
 
             <p className="text-light mt-10 text-center sm:text-left px-6 sm:px-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              Do you think you re the one? Then fill up the form below and we’ll
+              be in touch.
             </p>
 
             <div
