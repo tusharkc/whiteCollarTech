@@ -11,7 +11,8 @@ const WCTeam = () => {
 
       <p className="font-light text-lg mt-5 mb-12">
         Our organization is run by some extremely creative, talented, and
-        <br /> skilled individuals. Have a look and see for yourself!
+        <br className="hidden md:block" /> skilled individuals. Have a look and
+        see for yourself!
       </p>
 
       <div className="grid grid-cols-12 gap-4">
