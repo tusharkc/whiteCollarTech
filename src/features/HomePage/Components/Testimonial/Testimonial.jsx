@@ -106,21 +106,30 @@ const Testimonial = () => {
           </div>
           <div>
             <p className="text-center text-lg px-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.{" "}
-              <br />
-              <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-              luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              I have been working with Mit and White Collar for over 10 years
+              now and could not be happier with the level of professionalism and
+              quality they have provided. Any time I get a requirement,
+              specifically in the life sciences space, I will go to White Collar
+              before any other sources. Their management takes it upon
+              themselves to understand not only the job requirements, but the
+              actual project work the client is doing so they can send us the
+              best suited candidates who fit that criteria.
             </p>
 
             <div className="flex items-center justify-center my-12">
-              <img src={testimonialImg} alt="" />
+              <img
+                src={
+                  "https://media.licdn.com/dms/image/C4E03AQFjllBbJKxlxw/profile-displayphoto-shrink_800_800/0/1582206563137?e=1718841600&v=beta&t=1vNHE37Ze2XCsJg5AZBk-4ggFC-DJBKOz9T9YXd4exo"
+                }
+                className="h-20 w-20 rounded-full"
+                alt=""
+              />
 
               <p className="mx-5">
-                <span className="font-bold">Ricky Franses</span> <br />
-                <span className="text-[#0055A5]">COMPANY CEO</span>
+                <span className="font-bold">Michael Morgan</span> <br />
+                <span className="text-[#0055A5]">
+                  Randstad Digital Americas, IT Recruiting Director
+                </span>
               </p>
             </div>
           </div>
