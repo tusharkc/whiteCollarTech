@@ -78,21 +78,29 @@ const Testimonial = () => {
           </div>
           <div>
             <p className="text-center text-lg px-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.{" "}
-              <br />
-              <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-              luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              White Collar Technologies is a company which gave the launch pad
+              to launch my carrier in USA. While doing my masters, my friend
+              referred them to me for my training work under OPT . I got the
+              best training and later got hired as full-time employee in few
+              months. WCT not only trains you for the job but also gives you
+              immense career growth opportunities. They have great portfolio of
+              clients and amazing back office team.
             </p>
 
             <div className="flex items-center justify-center my-12">
-              <img src={testimonialImg} alt="" />
+              <img
+                src={
+                  "https://media.licdn.com/dms/image/C4E03AQGnY0MEQjPSaA/profile-displayphoto-shrink_400_400/0/1587179552323?e=1718841600&v=beta&t=8Ca0CQPEP_cnabA7jymrP_OkJ8C-I-iDYci8_ThSCtk"
+                }
+                alt=""
+                className="h-20 w-20 rounded-full"
+              />
 
               <p className="mx-5">
-                <span className="font-bold">Ricky Franses</span> <br />
-                <span className="text-[#0055A5]">COMPANY CEO</span>
+                <span className="font-bold">Rinka Chatterjee</span> <br />
+                <span className="text-[#0055A5]">
+                  White Collar Tech, Senior Business Analyst
+                </span>
               </p>
             </div>
           </div>

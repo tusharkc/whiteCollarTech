@@ -22,12 +22,12 @@ const DesktopFooter = () => {
               Hire the best team of professionals and get quality consistently.{" "}
             </p>
             <div className="flex items-baseline justify-between mb-12">
-              <Facebook />
-              <Instagram />
-              <Twitter />
+              {/* <Facebook /> */}
+              {/* <Instagram /> */}
+              {/* <Twitter /> */}
               <Linkdin />
-              <Youtube />
-              <Skype />
+              {/* <Youtube /> */}
+              {/* <Skype /> */}
             </div>
 
             <iframe
