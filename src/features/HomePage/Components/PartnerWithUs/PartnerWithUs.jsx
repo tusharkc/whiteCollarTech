@@ -1,6 +1,7 @@
 import React from "react";
 import "./partnerWithUsStyle.css";
 import wcLogoV2 from "../../../../assets/images/wcLogoV2.svg";
+import { scrollSectionInView } from "../../../../utils/functions";
 
 const PartnerWithUs = () => {
   return (
@@ -21,7 +22,10 @@ const PartnerWithUs = () => {
             already firmly planted in the Life Sciences Industry.
           </p>
 
-          <button className="mt-10 bg-white hover:bg-[#141414] hover:text-white transition-all py-4 px-6 rounded-md">
+          <button
+            onClick={() => scrollSectionInView("homePageContact")}
+            className="mt-10 bg-white hover:bg-[#141414] hover:text-white transition-all py-4 px-6 rounded-md"
+          >
             Partner with us
           </button>
         </div>

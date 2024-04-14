@@ -15,7 +15,7 @@ const HomePageCTA = () => {
 
   return (
     <>
-      <div className="grid grid-cols-12">
+      <div id="homePageContact" className="grid grid-cols-12">
         <img src={homePageCta} className="hidden sm:block col-span-5" />
 
         <div className="col-span-12 sm:col-span-7 place-self-center">

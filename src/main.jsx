@@ -19,6 +19,8 @@ import {
 } from "./features";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import "slick-carousel/slick/slick.css"; // Import slick-carousel styles
+import "slick-carousel/slick/slick-theme.css"; // Import slick-carousel theme styles
 
 const router = createBrowserRouter([
   {

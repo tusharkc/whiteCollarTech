@@ -3,15 +3,12 @@ import React, { useRef } from "react";
 import arrowIconWhite from "../../../../assets/icons/arrowIconWhite.svg";
 import homepageBannerData from "../../../../data/homePageBannerData";
 import useWindowSize from "../../../../hooks/useWindowSize";
+import Slider from "react-slick";
+import { scrollSectionInView } from "../../../../utils/functions";
 
 const HomePageHeader = () => {
-  const ref = useRef(null);
-
-  const scroll = (scrollOffset) => {
-    ref.current.scrollLeft += scrollOffset;
-  };
-
   const { width } = useWindowSize();
+  const sliderRef = useRef(null);
 
   const HomePageBanner = ({
     homePageHeaderImg,
@@ -31,7 +28,7 @@ const HomePageHeader = () => {
             })`,
             backgroundRepeat: "no-repeat",
           }}
-          onClick={() => scroll(window.innerWidth)}
+          onClick={() => {}}
           className="h-screen min-w-full relative bg-cover"
         >
           <div className="max-w-[580px] absolute bottom-[14%] left-[7%]">
@@ -45,6 +42,7 @@ const HomePageHeader = () => {
             <button
               onClick={(e) => {
                 e.stopPropagation();
+                scrollSectionInView("homePageContact");
               }}
               className="bg-white py-3 px-6 rounded-lg hover:bg-[#0055A5] hover:text-white transition-all"
             >
@@ -55,7 +53,7 @@ const HomePageHeader = () => {
               <img
                 onClick={(e) => {
                   e.stopPropagation();
-                  scroll(-window.innerWidth);
+                  sliderRef.current.slickPrev();
                 }}
                 src={arrowIconWhite}
                 alt=""
@@ -67,7 +65,7 @@ const HomePageHeader = () => {
               <img
                 onClick={(e) => {
                   e.stopPropagation();
-                  scroll(window.innerWidth);
+                  sliderRef.current.slickNext();
                 }}
                 src={arrowIconWhite}
                 alt=""
@@ -79,9 +77,17 @@ const HomePageHeader = () => {
     );
   };
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
-      <div ref={ref} className="flex overflow-x-hidden">
+      <Slider ref={sliderRef} {...settings}>
         {homepageBannerData.map((bannerItem, index) => (
           <HomePageBanner
             key={index}
@@ -90,7 +96,7 @@ const HomePageHeader = () => {
             finalIndex={homepageBannerData.length}
           />
         ))}
-      </div>
+      </Slider>
     </>
   );
 };
