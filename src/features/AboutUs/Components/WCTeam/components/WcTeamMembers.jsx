@@ -30,7 +30,7 @@ const WcTeamMembers = ({
           >
             {memberInfo}
           </p>
-          <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-t from-[#000000b8] to-transparent opacity-70 sm:opacity-0 transition duration-300 ease-in-out hover:opacity-70 rounded-3xl"></div>
+          <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-t from-[#000000b8] to-transparent opacity-70 sm:opacity-0 transition duration-300 ease-in-out hover:opacity-70"></div>
         </div>
 
         <div className="absolute sm:static bottom-4 left-4 text-white sm:text-black">
