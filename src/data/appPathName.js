@@ -3,7 +3,7 @@ const appPathName = {
   aboutUsPath: "/about",
   contactUsPath: "/contact-us",
   requestSubmittedSuccessPath: "/request-submitted",
-  careerPath: "/career",
+  careerPath: "/careers-1",
   jobDetailPath: "/career/:id",
   adminLoginPath: "/admin-login",
   jobsDashboardPath: "/jobs-dashboard",
