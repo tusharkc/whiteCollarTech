@@ -5,5 +5,6 @@ import tailwindcss from "tailwindcss";
 export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tailwindcss()],
+    appType: "spa",
   };
 });
