@@ -14,16 +14,16 @@ const HandsetHeader = () => {
   const navigate = useNavigate();
   const headerData = [
     { title: "About Us", navigateTo: appPathName.aboutUsPath },
-    { title: "Career", navigateTo: appPathName.homePagePath },
+    { title: "Career", navigateTo: appPathName.careerPath },
     { title: "Contact Us", navigateTo: appPathName.contactUsPath },
   ];
 
   const OfferingCard = () => {
     const offeringData = [
-      { title: "Managed Project Delivery", navigateTo: "" },
-      { title: "IT Project Staffing", navigateTo: "" },
-      { title: "Offshore Offerings", navigateTo: "" },
-      { title: "Direct Placement", navigateTo: "" },
+      { title: "Managed Project Delivery", navigateTo: appPathName.careerPath },
+      { title: "IT Project Staffing", navigateTo: appPathName.careerPath },
+      { title: "Offshore Offerings", navigateTo: appPathName.careerPath },
+      { title: "Direct Placement", navigateTo: appPathName.careerPath },
     ];
     return (
       <div className="pb-40">
@@ -93,7 +93,13 @@ const HandsetHeader = () => {
                 <img className="h-8 w-8" src={blueRightChevron} />
               </div>
               {headerData?.map((headerItem, index) => (
-                <Link to={headerItem.navigateTo} key={index}>
+                <Link
+                  to={headerItem.navigateTo}
+                  onClick={() => {
+                    setHeaderActive(false);
+                  }}
+                  key={index}
+                >
                   <div className="flex py-6 items-center">
                     <h4 className="text-3xl">{headerItem.title}</h4>
                     <img className="h-8 w-8" src={blueRightChevron} />

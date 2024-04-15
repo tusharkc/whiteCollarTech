@@ -100,9 +100,9 @@ const DesktopHeader = () => {
               <Link to={appPathName.aboutUsPath}>
                 <p
                   className={`cursor-pointer font-${
-                    pathname == "/about-us" ? "bold" : "medium"
+                    pathname == "/about" ? "bold" : "medium"
                   } ${
-                    isHeaderSticky && pathname == "/about-us"
+                    isHeaderSticky && pathname == "/about"
                       ? "text-[#0845B7]"
                       : "text-black"
                   } ${!isHeaderSticky ? "text-white" : "text-black"}`}

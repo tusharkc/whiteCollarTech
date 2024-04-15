@@ -1,6 +1,6 @@
 const appPathName = {
   homePagePath: "/",
-  aboutUsPath: "/about-us",
+  aboutUsPath: "/about",
   contactUsPath: "/contact-us",
   requestSubmittedSuccessPath: "/request-submitted",
   careerPath: "/career",
