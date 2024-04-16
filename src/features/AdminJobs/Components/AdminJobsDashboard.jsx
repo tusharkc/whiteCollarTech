@@ -8,7 +8,7 @@ import { logOutAdminUser } from "../../../services/appAuthorizedUser.slice";
 
 const AdminJobsDashboard = () => {
   const navigate = useNavigate();
-  const { data } = useGetAllJobsQuery();
+  const { data } = useGetAllJobsQuery({}, { refetchOnMountOrArgChange: true });
   const dispatch = useDispatch();
 
   return (

@@ -48,7 +48,10 @@ const AdminJobCard = ({ job }) => {
           </Link>
           <button
             className="bg-red-500 text-white px-6 py-2 rounded-lg"
-            onClick={async () => await deleteJob({ id: job.id })}
+            onClick={async () => {
+              await deleteJob({ id: job.id });
+              window.location.reload();
+            }}
           >
             Delete
           </button>

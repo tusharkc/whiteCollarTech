@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams, useRouteError } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { IconButton } from "@mui/material";
@@ -17,6 +17,7 @@ const AddOrEditJob = () => {
   const [addJob] = useAddJobMutation();
   const { data: existingJobData } = useGetJobByIdQuery({ jobId: id });
   const [editJob] = useEditJobMutation();
+  const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
     title: "",
@@ -78,6 +79,9 @@ const AddOrEditJob = () => {
     } else {
       await addJob(formState);
     }
+
+    navigate(-1);
+    window.location.reload();
   };
 
   useEffect(() => {
