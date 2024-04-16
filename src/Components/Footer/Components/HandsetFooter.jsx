@@ -36,12 +36,12 @@ const HandsetFooter = () => {
         </p>
 
         <div className="flex items-baseline justify-between pb-12">
-          <Facebook />
-          <Instagram />
-          <Twitter />
+          {/* <Facebook /> */}
+          {/* <Instagram /> */}
+          {/* <Twitter /> */}
           <Linkdin />
-          <Youtube />
-          <Skype />
+          {/* <Youtube /> */}
+          {/* <Skype /> */}
         </div>
 
         <div>
