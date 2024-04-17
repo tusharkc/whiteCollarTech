@@ -31,7 +31,7 @@ const JobDetailBanner = ({ jobData }) => {
             </p>
             <ChevronRightOutlinedIcon className="mx-4 text-[#818181]" />
             <p className="text-lg md:text-base max-w-prose text-center">
-              UI/UX Designer
+              {jobData?.title}
             </p>
           </div>
 
