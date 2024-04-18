@@ -6,8 +6,7 @@ import maulinImg from "../assets/images/maulin_img.jpeg";
 const wcTeamData = [
   {
     imgSrc: maulinImg,
-    memberInfo:
-      "Timothy is an energetic, dedicated, organized, and highly detail-oriented HR professional who has over 15 years of management experience. He is known for his excellent skills in onboarding new hires, I-9 compliance, immigration process as well as office management.",
+    memberInfo: "",
     memberDesignation: "Founder & CEO",
     memberName: "Maulin Thakkar",
     linkedInUrl: "https://www.linkedin.com/in/mitwct/",
