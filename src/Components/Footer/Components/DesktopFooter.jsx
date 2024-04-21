@@ -8,10 +8,11 @@ import {
   Twitter,
   Youtube,
 } from "../../SocialIcon";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { appPathName } from "../../../data";
 
 const DesktopFooter = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-[#141414] text-white">
       <div className="mx-[140px] pt-24 py-8">
@@ -107,7 +108,12 @@ const DesktopFooter = () => {
                 <p className="mt-5 mb-7">
                   Let's setup a meeting and have a <br /> coffee session.
                 </p>
-                <button className="bg-white hover:bg-[#0055A5] text-black hover:text-white transition-all p-3 rounded-xl">
+                <button
+                  onClick={() => {
+                    navigate(appPathName.contactUsPath);
+                  }}
+                  className="bg-white hover:bg-[#0055A5] text-black hover:text-white transition-all p-3 rounded-xl"
+                >
                   Get Started
                 </button>
               </div>
