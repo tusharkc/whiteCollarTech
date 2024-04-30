@@ -1,6 +1,7 @@
 import { Box, Tab, Tabs } from "@mui/material";
 import React, { useState } from "react";
 import { CustomTabPanel } from "../../../../Components";
+import useWindowSize from "../../../../hooks/useWindowSize";
 import { useGetAllCareersQuery } from "../../service/jobListing.service";
 import Jobs from "./Jobs";
 
@@ -13,6 +14,7 @@ function a11yProps(index) {
 
 const CareerListing = () => {
   const [value, setValue] = useState(0);
+  const { width } = useWindowSize();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -44,8 +46,12 @@ const CareerListing = () => {
 
         <Box sx={{ borderBottom: 1, borderColor: "transparent", py: "60px" }}>
           <Tabs
-            sx={{ borderColor: "#508ac2", borderBottom: "1px solid" }}
+            sx={{
+              borderColor: "#508ac2",
+              borderBottom: "1px solid",
+            }}
             value={value}
+            variant={width > 767 ? "standard" : "scrollable"}
             onChange={handleChange}
             aria-label="basic tabs example"
           >
