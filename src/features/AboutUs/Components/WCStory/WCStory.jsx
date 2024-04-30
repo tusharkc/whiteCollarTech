@@ -1,9 +1,9 @@
 import React from "react";
 import ceoSignature from "../../../../assets/images/founderSIgnature.svg";
-import wcStoryAbout1 from "../../../../assets/images/wcAboutStory1.png";
-import wcStoryAbout2 from "../../../../assets/images/wcAboutStory2.png";
-import wcStoryAbout3 from "../../../../assets/images/wcAboutStory3.png";
-import wcStoryAbout4 from "../../../../assets/images/wcAboutStory4.png";
+import wcStoryAbout1 from "../../../../assets/images/wcStoryAbout1.webp";
+import wcStoryAbout2 from "../../../../assets/images/wcStoryAbout2.webp";
+import wcStoryAbout3 from "../../../../assets/images/wcStoryAbout3.webp";
+import wcStoryAbout4 from "../../../../assets/images/wcStoryAbout4.webp";
 
 const WCStory = () => {
   return (
@@ -46,7 +46,7 @@ const WCStory = () => {
               <img src={ceoSignature} />
 
               <p className="text-xl mt-6">
-                <span className="text-[#0055A5]"> Maulin Thakker, </span>
+                <span className="text-[#0055A5]"> Maulin Thakkar, </span>
                 CEO & founder
               </p>
             </div>

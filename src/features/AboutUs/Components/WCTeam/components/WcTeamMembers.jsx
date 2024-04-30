@@ -15,7 +15,7 @@ const WcTeamMembers = ({
         <div
           // onMouseEnter={() => setDivHovered(true)}
           // onMouseLeave={() => setDivHovered(false)}
-          className="relative overflow-hidden bg-cover bg-no-repeat h-[445px]"
+          className="relative overflow-hidden bg-cover bg-no-repeat"
         >
           <img
             className={`w-full transition duration-300 ease-in-out h-full ${

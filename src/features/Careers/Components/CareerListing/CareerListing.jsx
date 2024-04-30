@@ -1,8 +1,8 @@
 import { Box, Tab, Tabs } from "@mui/material";
 import React, { useState } from "react";
 import { CustomTabPanel } from "../../../../Components";
-import Jobs from "./Jobs";
 import { useGetAllCareersQuery } from "../../service/jobListing.service";
+import Jobs from "./Jobs";
 
 function a11yProps(index) {
   return {
@@ -50,9 +50,9 @@ const CareerListing = () => {
             aria-label="basic tabs example"
           >
             <Tab label="All Positions" {...a11yProps(0)} />
-            <Tab label="Development" {...a11yProps(1)} />
-            <Tab label="Sales" {...a11yProps(2)} />
-            <Tab label="Design" {...a11yProps(3)} />
+            <Tab label="Information Technology" {...a11yProps(1)} />
+            <Tab label="Life Science" {...a11yProps(2)} />
+            <Tab label="Engineering" {...a11yProps(3)} />
           </Tabs>
 
           <CustomTabPanel value={value} index={value}>

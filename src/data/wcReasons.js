@@ -9,7 +9,7 @@ const wcReasons = [
       {
         title: "White Glove Delivery",
         description:
-          "We provide assistance starting from resume to relocation with consistent support for ensuring a seamless HR workflow.",
+          "We provide assistance starting from recruitment to relocation with consistent support for ensuring a seamless HR workflow.",
       },
       {
         title: "Relevant Experience",

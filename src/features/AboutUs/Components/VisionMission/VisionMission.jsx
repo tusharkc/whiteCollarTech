@@ -1,6 +1,6 @@
 import React from "react";
-import missionImg from "../../../../assets/images/mission.png";
-import visionImg from "../../../../assets/images/vision.png";
+import missionImg from "../../../../assets/images/missionImg.png";
+import visionImg from "../../../../assets/images/visionImg.webp";
 
 const VisionMission = () => {
   return (
@@ -15,13 +15,13 @@ const VisionMission = () => {
               future where we are well-trusted and relied upon by both our
               clients and employees.
             </p>
-            <img src={visionImg} className="mt-12" />
+            <img src={missionImg} className="mt-12" />
           </div>
         </div>
         <div className="col-span-12 sm:col-span-6 flex items-center">
           <div className="max-w-xl flex flex-col justify-between">
             <img
-              src={missionImg}
+              src={visionImg}
               className="self-end order-2 sm:order-1 mt-12 sm:mt-0"
             />
             <div className="mt-12 order-1">

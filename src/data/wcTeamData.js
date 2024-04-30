@@ -1,7 +1,7 @@
-import teamImg1 from "../assets/images/teamImg1.jpeg";
-import teamImg2 from "../assets/images/teamImg2.jpeg";
-import teamImg3 from "../assets/images/teamImg3.jpeg";
-import maulinImg from "../assets/images/maulin_img.jpeg";
+import maulinImg from "../assets/images/maulinImg.webp";
+import teamImg1 from "../assets/images/teamImg1.webp";
+import teamImg2 from "../assets/images/teamImg2.webp";
+import teamImg3 from "../assets/images/teamImg3.webp";
 
 const wcTeamData = [
   {

@@ -1,6 +1,6 @@
 import directPlacement from "../assets/images/directPlacement.png";
-import itProjectStaffing from "../assets/images/itProjectStaffing.png";
-import managedProjectDelivery from "../assets/images/managedProjectDelivery.png";
+import itProjectStaffing from "../assets/images/itProjectStaffing.webp";
+import managedProjectDelivery from "../assets/images/managedProjectDelivery.webp";
 import offShoreOffering from "../assets/images/offShoreOffering.png";
 import appPathName from "./appPathName";
 
