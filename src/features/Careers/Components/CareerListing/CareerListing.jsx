@@ -52,7 +52,7 @@ const CareerListing = () => {
             <Tab label="All Positions" {...a11yProps(0)} />
             <Tab label="Information Technology" {...a11yProps(1)} />
             <Tab label="Life Science" {...a11yProps(2)} />
-            <Tab label="Engineering" {...a11yProps(3)} />
+            <Tab label="General" {...a11yProps(3)} />
           </Tabs>
 
           <CustomTabPanel value={value} index={value}>
