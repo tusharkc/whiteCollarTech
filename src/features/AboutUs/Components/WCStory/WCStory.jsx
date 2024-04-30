@@ -1,9 +1,9 @@
 import React from "react";
+import ceoSignature from "../../../../assets/images/founderSIgnature.svg";
 import wcStoryAbout1 from "../../../../assets/images/wcAboutStory1.png";
 import wcStoryAbout2 from "../../../../assets/images/wcAboutStory2.png";
 import wcStoryAbout3 from "../../../../assets/images/wcAboutStory3.png";
 import wcStoryAbout4 from "../../../../assets/images/wcAboutStory4.png";
-import ceoSignature from "../../../../assets/images/founderSIgnature.svg";
 
 const WCStory = () => {
   return (

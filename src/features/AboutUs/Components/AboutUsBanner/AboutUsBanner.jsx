@@ -1,6 +1,6 @@
 import React from "react";
-import bannerImage from "../../../../assets/images/aboutUsBanner.png";
 import userNavigationIndicatorIcon from "../../../../assets/icons/userNavigationIndicatorIcon.svg";
+import bannerImage from "../../../../assets/images/aboutUsBanner.png";
 
 const AboutUsBanner = () => {
   return (

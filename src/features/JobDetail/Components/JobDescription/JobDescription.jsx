@@ -1,6 +1,6 @@
+import parse from "html-react-parser";
 import React, { useEffect, useRef } from "react";
 import "react-quill/dist/quill.snow.css";
-import parse from "html-react-parser";
 
 const JobDescription = ({ jobData }) => {
   const jobDescriptionContainerRef = useRef(null);
@@ -83,8 +83,15 @@ const JobDescription = ({ jobData }) => {
     <div className="container mx-auto flex items-center justify-center">
       <div className="py-16 px-4 md:px-0 md:mx-[80px] space-y-24">
         {/* Job Overview */}
-        <div className="py-16" ref={jobDescriptionContainerRef}>
+        <div className="py-4" ref={jobDescriptionContainerRef}>
           {parse(`${jobData?.jobDescription}`)}
+        </div>
+        <div className="space-y-6">
+          <p className="text-[2.5rem] font-light">Required Experience</p>
+
+          <div className="text-[2rem] font-[600]">
+            {jobData?.minYearExperience} - {jobData?.maxYearExperience} Years
+          </div>
         </div>
 
         {/* Roles and Responsibilities*/}
@@ -92,7 +99,7 @@ const JobDescription = ({ jobData }) => {
         <div className="space-y-6">
           <p className="text-[2.5rem] font-light">Roles + Responsibilities:</p>
 
-          <div className="py-16" ref={rolesAndResponsibilitiesContainerRef}>
+          <div className="py-4" ref={rolesAndResponsibilitiesContainerRef}>
             {parse(`${jobData?.rolesAndResponsibilities}`)}
           </div>
         </div>
@@ -102,7 +109,7 @@ const JobDescription = ({ jobData }) => {
             What it takes to be one of us!
           </p>
 
-          <div className="py-16" ref={qualificationsContainerRef}>
+          <div className="py-4" ref={qualificationsContainerRef}>
             {parse(`${jobData?.qualifications}`)}
           </div>
         </div>

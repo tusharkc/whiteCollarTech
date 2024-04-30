@@ -1,7 +1,7 @@
 import React from "react";
 import { Footer, Header } from "../../../Components";
-import CareerBanner from "./CareerBanner/CareerBanner";
 import CareerAdvantageGrid from "./CareerAdvantageGrid/CareerAdvantageGrid";
+import CareerBanner from "./CareerBanner/CareerBanner";
 import CareerListing from "./CareerListing/CareerListing";
 
 const Career = () => {

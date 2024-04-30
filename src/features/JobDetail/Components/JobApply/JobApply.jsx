@@ -1,12 +1,12 @@
+import { CloseCircleOutlined } from "@ant-design/icons";
+import CloseIcon from "@mui/icons-material/Close";
+import { IconButton, Snackbar } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import applyNowCta from "../../../../assets/images/applyNowCta.png";
-import { appPathName } from "../../../../data";
 import uploadResumeBg from "../../../../assets/images/uploadResumeBg.png";
-import CloseIcon from "@mui/icons-material/Close";
+import { appPathName } from "../../../../data";
 import { useSendJobApplicationMutation } from "../../services/jobDetail.service";
-import { IconButton, Snackbar } from "@mui/material";
-import { CloseCircleOutlined } from "@ant-design/icons";
 
 const JobApply = () => {
   const { id } = useParams();

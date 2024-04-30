@@ -1,10 +1,10 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { Footer, Header } from "../../../Components";
-import JobDetailBanner from "./JobDetailBanner/JobDetailBanner";
+import { useGetCareerByIdQuery } from "../services/jobDetail.service";
 import JobApply from "./JobApply/JobApply";
 import JobDescription from "./JobDescription/JobDescription";
-import { useParams } from "react-router-dom";
-import { useGetCareerByIdQuery } from "../services/jobDetail.service";
+import JobDetailBanner from "./JobDetailBanner/JobDetailBanner";
 
 const JobDetail = () => {
   const { id } = useParams();

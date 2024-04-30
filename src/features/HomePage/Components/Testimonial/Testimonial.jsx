@@ -1,8 +1,7 @@
 import React from "react";
-import doubleQuote from "../../../../assets/images/doubleQuote.svg";
 import Slider from "react-slick";
 import arrowIcon from "../../../../assets/icons/arrowIcon.svg";
-import testimonialImg from "../../../../assets/images/testimonial1.png";
+import doubleQuote from "../../../../assets/images/doubleQuote.svg";
 
 const Testimonial = () => {
   function PrevArrow({ className, style, onClick }) {
@@ -14,6 +13,8 @@ const Testimonial = () => {
           ...style,
           display: "block",
           transform: "rotate(180deg)",
+          width: "30px",
+          height: "30px",
         }}
         onClick={onClick}
       />
@@ -25,7 +26,7 @@ const Testimonial = () => {
       <img
         src={arrowIcon}
         className={className}
-        style={{ ...style, display: "block" }}
+        style={{ ...style, display: "block", width: "30px", height: "30px" }}
         onClick={onClick}
       />
     );

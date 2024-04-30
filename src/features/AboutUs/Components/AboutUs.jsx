@@ -1,10 +1,10 @@
 import React from "react";
 import { Footer, Header } from "../../../Components";
 import AboutUsBanner from "./AboutUsBanner/AboutUsBanner";
-import WCStory from "./WCStory/WCStory";
 import VisionMission from "./VisionMission/VisionMission";
-import WCTimeLine from "./WCTimeLine/WCTimeLine";
+import WCStory from "./WCStory/WCStory";
 import WCTeam from "./WCTeam/WCTeam";
+import WCTimeLine from "./WCTimeLine/WCTimeLine";
 
 const AboutUs = () => {
   return (

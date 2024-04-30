@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import wcAchivment from "../../../../assets/images/wcAchivement.png";
-import { Number } from "../../../../Components";
 import { Waypoint } from "react-waypoint";
+import { Number } from "../../../../Components";
+import wcAchivment from "../../../../assets/images/wcAchivement.png";
 
 const WCAchivment = () => {
   const [inView, setInView] = useState(false);
@@ -37,7 +37,7 @@ const WCAchivment = () => {
                   </div>
                   <div className="w-full sm:w-24 py-12 sm:py-0">
                     <h2 className="text-5xl font-semibold text-[#0055A5]">
-                      <Number n={1000} />+
+                      <Number n={700} />+
                     </h2>
                     <p className="leading-6">resources placed</p>
                   </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import visionImg from "../../../../assets/images/vision.png";
 import missionImg from "../../../../assets/images/mission.png";
+import visionImg from "../../../../assets/images/vision.png";
 
 const VisionMission = () => {
   return (

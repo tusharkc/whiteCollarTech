@@ -1,11 +1,9 @@
-import React from "react";
-import wcLogoBlue from "../../../assets/images/wcLogoBlue.png";
-import closeIcon from "../../../assets/icons/close.png";
-import blueRightChevron from "../../../assets/icons/blueRightChevron.svg";
-import { useState } from "react";
-import { appPathName } from "../../../data";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import wctLogoLight from "../../../assets/images/wctLogoWhite.svg";
+import blueRightChevron from "../../../assets/icons/blueRightChevron.svg";
+import closeIcon from "../../../assets/icons/close.png";
+import wcLogoBlue from "../../../assets/images/wcLogoBlue.png";
+import { appPathName } from "../../../data";
 
 const HandsetHeader = () => {
   const [headerActive, setHeaderActive] = useState(false);
@@ -20,10 +18,13 @@ const HandsetHeader = () => {
 
   const OfferingCard = () => {
     const offeringData = [
-      { title: "Managed Project Delivery", navigateTo: appPathName.careerPath },
-      { title: "IT Project Staffing", navigateTo: appPathName.careerPath },
-      { title: "Offshore Offerings", navigateTo: appPathName.careerPath },
-      { title: "Direct Placement", navigateTo: appPathName.careerPath },
+      {
+        title: "Managed Project Delivery",
+        navigateTo: appPathName.contactUsPath,
+      },
+      { title: "IT Project Staffing", navigateTo: appPathName.contactUsPath },
+      { title: "Offshore Offerings", navigateTo: appPathName.contactUsPath },
+      { title: "Direct Placement", navigateTo: appPathName.contactUsPath },
     ];
     return (
       <div className="pb-40">

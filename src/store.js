@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { jobApi } from "./features/AddOrEditJob/service/jobs.service";
+import { adminUserJobs } from "./features/AdminJobs/service/adminJob.service";
+import { careerListingApi } from "./features/Careers/service/jobListing.service";
+import { adminUserJobApplications } from "./features/JobApplications/service/jobApplications.service";
+import { jobDetailApi } from "./features/JobDetail/services/jobDetail.service";
 import appAuthorizedUserSlice from "./services/appAuthorizedUser.slice";
 import { appUserApi } from "./services/user.services";
-import { jobApi } from "./features/AddOrEditJob/service/jobs.service";
-import { careerListingApi } from "./features/Careers/service/jobListing.service";
-import { adminUserJobs } from "./features/AdminJobs/service/adminJob.service";
-import { jobDetailApi } from "./features/JobDetail/services/jobDetail.service";
-import { adminUserJobApplications } from "./features/JobApplications/service/jobApplications.service";
 
 export const store = configureStore({
   reducer: {

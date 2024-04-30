@@ -1,9 +1,9 @@
-import homePageHeader1 from "../assets/images/header1.png";
-import homePageHeader2 from "../assets/images/header2.png";
-import homePageHeader3 from "../assets/images/header3.png";
 import handsetHeaderImg1 from "../assets/images/handsetHomePageBanner1.png";
 import handsetHeaderImg2 from "../assets/images/handsetHomePageBanner2.png";
 import handsetHeaderImg3 from "../assets/images/handsetHomePageBanner3.png";
+import homePageHeader1 from "../assets/images/header1.png";
+import homePageHeader2 from "../assets/images/header2.png";
+import homePageHeader3 from "../assets/images/header3.png";
 
 const homepageBannerData = [
   {

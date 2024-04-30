@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import wctLogoLight from "../../../assets/images/wctLogoWhite.svg";
-import wcLogoBlue from "../../../assets/images/wcLogoBlue.png";
-import downChevronWhite from "../../../assets/icons/downChevronWhite.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import downChevronBlue from "../../../assets/icons/downChevronBlue.png";
-import { Link, useLocation } from "react-router-dom";
-import "../style/headerStyle.css";
+import downChevronWhite from "../../../assets/icons/downChevronWhite.png";
+import wcLogoBlue from "../../../assets/images/wcLogoBlue.png";
+import wctLogoLight from "../../../assets/images/wctLogoWhite.svg";
 import { appPathName } from "../../../data";
+import "../style/headerStyle.css";
 
 const DesktopHeader = () => {
   const location = useLocation();
-
+  const navigate = useNavigate();
   const { pathname } = location;
 
   const [showOfferingOptions, setShowOfferingOptions] = useState(false);
@@ -34,16 +34,36 @@ const DesktopHeader = () => {
 
   const HeaderOfferingOptions = () => (
     <div className="absolute right-[37%] mt-8 bg-white p-6 rounded-3xl header-offering-box">
-      <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
+      <p
+        onClick={() => {
+          navigate(appPathName.contactUsPath);
+        }}
+        className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white"
+      >
         Managed Project Delivery
       </p>
-      <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
+      <p
+        onClick={() => {
+          navigate(appPathName.contactUsPath);
+        }}
+        className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white"
+      >
         IT Project Staffing
       </p>
-      <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
+      <p
+        onClick={() => {
+          navigate(appPathName.contactUsPath);
+        }}
+        className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white"
+      >
         Offshore Offerings
       </p>
-      <p className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white">
+      <p
+        onClick={() => {
+          navigate(appPathName.contactUsPath);
+        }}
+        className="font-medium cursor-pointer px-1 py-2 hover:bg-[#0055A5] hover:rounded-md hover:text-white"
+      >
         Direct Placement
       </p>
     </div>

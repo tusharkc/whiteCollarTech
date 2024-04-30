@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 
+import Slider from "react-slick";
 import arrowIconWhite from "../../../../assets/icons/arrowIconWhite.svg";
 import homepageBannerData from "../../../../data/homePageBannerData";
 import useWindowSize from "../../../../hooks/useWindowSize";
-import Slider from "react-slick";
 import { scrollSectionInView } from "../../../../utils/functions";
 
 const HomePageHeader = () => {
