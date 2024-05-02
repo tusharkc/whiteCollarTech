@@ -1,5 +1,5 @@
-import handsetHeaderImg1 from "../assets/images/handsetHeaderImg1.webp";
-import handsetHeaderImg3 from "../assets/images/handsetHeaderImg3.webp";
+import handsetHeaderImg1 from "../assets/images/handsetHeaderImg1.png";
+import handsetHeaderImg3 from "../assets/images/handsetHeaderImg3.png";
 import handsetHeaderImg2 from "../assets/images/handsetHomePageBanner2.png";
 import homePageHeader2 from "../assets/images/header2.png";
 import homePageHeader1 from "../assets/images/homePageHeader1.webp";
