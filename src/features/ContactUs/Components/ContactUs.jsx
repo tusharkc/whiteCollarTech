@@ -1,8 +1,8 @@
 import React from "react";
+import { Footer, Header } from "../../../Components";
 import ContactUsBanner from "./ContactUsBanner/ContactUsBanner";
 import ContactUsForm from "./ContactUsForm/ContactUsForm";
 import WcLocations from "./WcLocations/WcLocations";
-import { Footer, Header } from "../../../Components";
 
 const ContactUs = () => {
   return (

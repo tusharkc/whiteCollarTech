@@ -26,19 +26,19 @@ const WCStory = () => {
 
             <div className="mt-5 leading-7">
               <p>
-                Founded in 2010, White Collar Technologies started with the core
-                idea of bridging the gaps in the IT industry when it comes to
-                innovation and talent. Our founder, himself a consultant at that
-                time, identified areas where improvements were drastically
-                needed.
+                Founded in 2010, I started White Collar Technologies with the
+                core idea of bridging the gaps in the IT industry when it comes
+                to innovation and talent. Being experienced as a consultant
+                myself, I couldn’t help but identify a lot of areas where
+                improvements were drastically needed and decided to work on it.
               </p>
               <br />
               <p>
-                He started White Collar with a vision of turning it into an
-                industry giant that provides top talent to brands and
+                I had a vision to turn White Collar into an industry giant that
+                provides top talent to leading brands and Fortune 500
                 businesses. The aim was to become well-trusted, well-respected
                 and relied upon by both the clients as well as the talented
-                individuals that join us in our journey.
+                individuals that join us in our journey
               </p>
             </div>
 

@@ -1,12 +1,33 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { appPathName } from "../../../../../data";
 import { MessageModal } from "../../../../../Components";
+import { appPathName } from "../../../../../data";
+import { useSendMessageMutation } from "../../../../../services/contact.services";
 
 const ContactUsRight = () => {
+  const [sendMessage] = useSendMessageMutation();
+  const [formData, setFormData] = useState({
+    name: "",
+    phoneNumber: "",
+    email: "",
+    agreeToTerms: "",
+  });
+
   const navigate = useNavigate();
-  const onFormSubmit = (e) => {
+  const onFormSubmit = async (e) => {
     e.preventDefault();
+    const formDataPayload = {
+      fullName: formData.name,
+      phoneNumber: formData.phoneNumber,
+      email: formData.email,
+      message: msgVal,
+      agreeToTerms: true,
+    };
+
+    try {
+      await sendMessage(formDataPayload).unwrap();
+      navigate(appPathName.requestSubmittedSuccessPath);
+    } catch (error) {}
 
     navigate(appPathName.requestSubmittedSuccessPath);
   };
@@ -32,11 +53,19 @@ const ContactUsRight = () => {
               <div className="grid grid-cols-12 gap-4">
                 <input
                   required
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                   placeholder="Full Name"
                 />
                 <input
                   required
+                  value={formData.phoneNumber}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phoneNumber: e.target.value })
+                  }
                   className="col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
                   placeholder="Phone Number"
                 />
@@ -45,6 +74,10 @@ const ContactUsRight = () => {
                 required
                 className="outline-none border-b-2 border-black p-1 bg-transparent w-full my-16"
                 placeholder="Email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
               />
               <textarea
                 onClick={() => setOpen(true)}
@@ -56,9 +89,13 @@ const ContactUsRight = () => {
               <label className="flex items-start justify-center my-12">
                 <div>
                   <input
+                    value={formData.agreeToTerms}
                     required
                     style={{ height: "22px", width: "22px" }}
                     type="checkbox"
+                    onChange={(e) =>
+                      setFormData({ ...formData, agreeToTerms: e.target.value })
+                    }
                   />
                 </div>
                 <span className="text-[#9F9F9F] font-ligh ml-4">

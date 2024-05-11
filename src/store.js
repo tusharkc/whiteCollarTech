@@ -5,6 +5,7 @@ import { careerListingApi } from "./features/Careers/service/jobListing.service"
 import { adminUserJobApplications } from "./features/JobApplications/service/jobApplications.service";
 import { jobDetailApi } from "./features/JobDetail/services/jobDetail.service";
 import appAuthorizedUserSlice from "./services/appAuthorizedUser.slice";
+import { contactApi } from "./services/contact.services";
 import { appUserApi } from "./services/user.services";
 
 export const store = configureStore({
@@ -16,6 +17,7 @@ export const store = configureStore({
     [adminUserJobs.reducerPath]: adminUserJobs.reducer,
     [jobDetailApi.reducerPath]: jobDetailApi.reducer,
     [adminUserJobApplications.reducerPath]: adminUserJobApplications.reducer,
+    [contactApi.reducerPath]: contactApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -24,6 +26,7 @@ export const store = configureStore({
       careerListingApi.middleware,
       adminUserJobs.middleware,
       jobDetailApi.middleware,
-      adminUserJobApplications.middleware
+      adminUserJobApplications.middleware,
+      contactApi.middleware
     ),
 });

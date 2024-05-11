@@ -1,15 +1,38 @@
 import React, { useState } from "react";
-import homePageCta from "../../../../assets/images/homePageCTA.png";
 import { useNavigate } from "react-router-dom";
-import appPathName from "../../../../data/appPathName";
 import { MessageModal } from "../../../../Components";
+import homePageCta from "../../../../assets/images/homePageCTA.png";
+import appPathName from "../../../../data/appPathName";
+import { useSendMessageMutation } from "../../../../services/contact.services";
 
 const HomePageCTA = () => {
   const navigate = useNavigate();
+  const [sendMessage] = useSendMessageMutation();
+  const [formData, setFormData] = useState({
+    name: "",
+    phoneNumber: "",
+    email: "",
+    agreeToTerms: "",
+  });
+
   const [open, setOpen] = useState(false);
   const [msgVal, setMsgVal] = useState("");
-  const onFormSubmit = (e) => {
+
+  const onFormSubmit = async (e) => {
     e.preventDefault();
+    const formDataPayload = {
+      fullName: formData.name,
+      phoneNumber: formData.phoneNumber,
+      email: formData.email,
+      message: msgVal,
+      agreeToTerms: true,
+    };
+
+    try {
+      await sendMessage(formDataPayload).unwrap();
+      navigate(appPathName.requestSubmittedSuccessPath);
+    } catch (error) {}
+
     navigate(appPathName.requestSubmittedSuccessPath);
   };
 
@@ -33,60 +56,71 @@ const HomePageCTA = () => {
             </p>
 
             <form onSubmit={onFormSubmit}>
-              <div className="grid grid-cols-12 gap-4 mt-16">
-                <input
-                  required
-                  className="col-span-12 sm:col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
-                  placeholder="Full Name"
-                  name="fullName"
-                  id="fullName"
-                />
-                <input
-                  required
-                  className="col-span-12 sm:col-span-6 mt-16 sm:mt-0 outline-none border-b-2 border-black p-1 bg-transparent"
-                  placeholder="Phone Number"
-                  name="phoneNumber"
-                  id="phoneNumber"
-                />
-              </div>
-
-              <input
-                required
-                name="email"
-                id="email"
-                placeholder="Email Address"
-                className="my-20 active:outline-none focus:outline-none border-b-2 border-black p-2 min-w-full"
-              />
-
-              <textarea
-                onClick={() => setOpen(true)}
-                name="message"
-                id="message"
-                value={!open && msgVal}
-                placeholder="Message (Optional)"
-                className="active:outline-none focus:outline-none border-b-2 border-black min-w-full resize-none"
-              />
-
-              <label className="flex items-start justify-center gap-2 mt-14">
-                <div>
+              <div className="mt-16">
+                <div className="grid grid-cols-12 gap-4">
                   <input
                     required
-                    style={{ height: "25px", width: "25px" }}
-                    type="checkbox"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
+                    placeholder="Full Name"
+                  />
+                  <input
+                    required
+                    value={formData.phoneNumber}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phoneNumber: e.target.value })
+                    }
+                    className="col-span-6 outline-none border-b-2 border-black p-1 bg-transparent"
+                    placeholder="Phone Number"
                   />
                 </div>
-                <span className="text-[#9F9F9F] font-light text-xs">
-                  I have read and agree with White Collar’s stated Privacy
-                  Policy and Terms Conditions
-                </span>
-              </label>
+                <input
+                  required
+                  className="outline-none border-b-2 border-black p-1 bg-transparent w-full my-16"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />
+                <textarea
+                  onClick={() => setOpen(true)}
+                  value={!open && msgVal}
+                  className="outline-none border-b-2 border-black p-1 bg-transparent w-full resize-none"
+                  placeholder="Message (Optional)"
+                />
 
-              <button
-                type="submit"
-                className="my-6 bg-[#0055A5] text-white hover:bg-[#141414] px-4 py-2 rounded-lg transition-all"
-              >
-                Submit
-              </button>
+                <label className="flex items-start justify-center my-12">
+                  <div>
+                    <input
+                      value={formData.agreeToTerms}
+                      required
+                      style={{ height: "22px", width: "22px" }}
+                      type="checkbox"
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          agreeToTerms: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <span className="text-[#9F9F9F] font-ligh ml-4">
+                    I have read and agree with White Collar’s stated Privacy
+                    Policy and Terms Conditions
+                  </span>
+                </label>
+
+                <button
+                  type="submit"
+                  className="bg-[#0055A5] text-white hover:bg-[#141414] px-4 py-2 rounded-lg transition-all"
+                >
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>
