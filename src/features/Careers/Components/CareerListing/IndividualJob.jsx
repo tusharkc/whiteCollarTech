@@ -1,7 +1,6 @@
-import React from "react";
+import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
-import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import { Link } from "react-router-dom";
 
 const IndividualJob = ({ job }) => {
@@ -14,9 +13,13 @@ const IndividualJob = ({ job }) => {
         <div className="flex items-center space-x-4 md:space-x-16">
           <span className="flex items-center space-x-2 md:space-x-4">
             <WorkOutlineOutlinedIcon style={{ color: "#0054a4" }} />
-            <p>
-              {job?.minYearExperience} - {job?.maxYearExperience} Years
-            </p>
+            {job?.maxYearExperience > 0 ? (
+              <p>
+                {job?.minYearExperience} - {job?.maxYearExperience} Years
+              </p>
+            ) : (
+              <p>No Experience Required</p>
+            )}
           </span>
           <span className="flex items-center space-x-2 md:space-x-4">
             <LocationOnOutlinedIcon style={{ color: "#0054a4" }} />

@@ -1,5 +1,5 @@
 import parse from "html-react-parser";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "react-quill/dist/quill.snow.css";
 
 const JobDescription = ({ jobData }) => {
@@ -90,7 +90,9 @@ const JobDescription = ({ jobData }) => {
           <p className="text-[2.5rem] font-light">Required Experience</p>
 
           <div className="text-[2rem] font-[600]">
-            {jobData?.minYearExperience} - {jobData?.maxYearExperience} Years
+            {jobData?.maxYearExperience > 0
+              ? `${jobData?.minYearExperience} - ${jobData?.maxYearExperience} Years`
+              : "No Experience Required"}
           </div>
         </div>
 

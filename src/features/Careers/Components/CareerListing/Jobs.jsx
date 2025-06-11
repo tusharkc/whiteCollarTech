@@ -1,4 +1,3 @@
-import React from "react";
 import IndividualJob from "./IndividualJob";
 
 const Jobs = ({ jobsData = [] }) => {

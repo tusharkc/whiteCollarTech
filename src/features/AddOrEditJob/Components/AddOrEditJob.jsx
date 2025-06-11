@@ -1,10 +1,10 @@
+import { CloseCircleOutlined } from "@ant-design/icons";
+import { IconButton } from "@mui/material";
+import Snackbar from "@mui/material/Snackbar";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams, useRouteError } from "react-router-dom";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { IconButton } from "@mui/material";
-import { CloseCircleOutlined } from "@ant-design/icons";
-import Snackbar from "@mui/material/Snackbar";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   useAddJobMutation,
   useEditJobMutation,
@@ -57,7 +57,7 @@ const AddOrEditJob = () => {
   };
 
   const maxYearExperienceOptions = () => {
-    const start = parseInt(formState.minYearExperience || 0, 10) + 1;
+    const start = parseInt(formState.minYearExperience || 0, 10);
     return Array.from({ length: 51 - start }, (_, i) => (
       <option key={i + start} value={i + start}>
         {i + start}

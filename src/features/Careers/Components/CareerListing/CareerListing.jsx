@@ -1,5 +1,5 @@
 import { Box, Tab, Tabs } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import { CustomTabPanel } from "../../../../Components";
 import useWindowSize from "../../../../hooks/useWindowSize";
 import { useGetAllCareersQuery } from "../../service/jobListing.service";
