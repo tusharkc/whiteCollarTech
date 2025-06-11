@@ -1,6 +1,6 @@
+import ahemedabadImg from "../assets/images/wcAhmedabadLocation.png";
 import rhodeIslandImg from "../assets/images/wcRhodeIslandLocation.png";
 import torontoImg from "../assets/images/wcTorontoLocation.png";
-import ahemedabadImg from "../assets/images/wcAhmedabadLocation.png";
 
 const locationInfoData = [
   {
