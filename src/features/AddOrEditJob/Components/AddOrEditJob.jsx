@@ -15,7 +15,10 @@ const AddOrEditJob = () => {
   const { id } = useParams();
   const isEditingAJob = id ? true : false;
   const [addJob] = useAddJobMutation();
-  const { data: existingJobData } = useGetJobByIdQuery({ jobId: id });
+  const { data: existingJobData } = useGetJobByIdQuery(
+    { jobId: id },
+    { skip: !id }
+  );
   const [editJob] = useEditJobMutation();
   const navigate = useNavigate();
 
