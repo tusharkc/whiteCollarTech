@@ -79,11 +79,12 @@ const AddOrEditJob = () => {
       setFormHasError(true);
     } else if (isEditingAJob) {
       await editJob({ id: id, data: formState });
+      navigate(-1);
     } else {
       await addJob(formState);
+      navigate(-1);
     }
 
-    navigate(-1);
     // window.location.reload();
   };
 
