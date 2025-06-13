@@ -1,10 +1,9 @@
-import React from "react";
-import AdminJobCard from "./AdminJobCard/AdminJobCard";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import appPathName from "../../../data/appPathName";
-import { useGetAllJobsQuery } from "../service/adminJob.service";
-import { useDispatch } from "react-redux";
 import { logOutAdminUser } from "../../../services/appAuthorizedUser.slice";
+import { useGetAllJobsQuery } from "../service/adminJob.service";
+import AdminJobCard from "./AdminJobCard/AdminJobCard";
 
 const AdminJobsDashboard = () => {
   const navigate = useNavigate();

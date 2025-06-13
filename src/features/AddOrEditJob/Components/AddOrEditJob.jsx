@@ -84,7 +84,7 @@ const AddOrEditJob = () => {
     }
 
     navigate(-1);
-    window.location.reload();
+    // window.location.reload();
   };
 
   useEffect(() => {
