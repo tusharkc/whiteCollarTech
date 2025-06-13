@@ -118,7 +118,7 @@ const AddOrEditJob = () => {
         open={formHasError}
         autoHideDuration={6000}
         onClose={handleClose}
-        message="Invalid or improper information provided"
+        message="Invalid or improper information provided. Please fill all the fields"
         action={action}
       />
 
