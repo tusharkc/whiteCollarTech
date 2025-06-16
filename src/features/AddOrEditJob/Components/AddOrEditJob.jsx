@@ -31,6 +31,7 @@ const AddOrEditJob = () => {
     maxYearExperience: 1,
     jobType: "Full-Time",
     city: "",
+    markAsNoExperienceNeeded: false,
     jobCategory: "Development",
   });
 
@@ -84,8 +85,6 @@ const AddOrEditJob = () => {
       await addJob(formState);
       navigate(-1);
     }
-
-    // window.location.reload();
   };
 
   useEffect(() => {
@@ -94,6 +93,9 @@ const AddOrEditJob = () => {
         setFormState((prevState) => ({
           ...prevState,
           [formItem[0]]: formItem[1],
+          markAsNoExperienceNeeded:
+            existingJobData?.data?.minYearExperience == 0 &&
+            existingJobData?.data?.maxYearExperience == 0,
         }));
       });
     }
@@ -111,6 +113,15 @@ const AddOrEditJob = () => {
       </IconButton>
     </React.Fragment>
   );
+
+  useEffect(() => {
+    if (!formState?.markAsNoExperienceNeeded) {
+      setFormState({
+        ...formState,
+        maxYearExperience: parseInt(formState?.minYearExperience) + 1,
+      });
+    }
+  }, [formState.minYearExperience]);
 
   return (
     <>
@@ -213,6 +224,7 @@ const AddOrEditJob = () => {
                 Minimum Years of Experience
               </label>
               <select
+                disabled={formState?.markAsNoExperienceNeeded}
                 name="minYearExperience"
                 id="minYearExperience"
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
@@ -235,6 +247,7 @@ const AddOrEditJob = () => {
                 Maximum Years of Experience
               </label>
               <select
+                disabled={formState?.markAsNoExperienceNeeded}
                 name="maxYearExperience"
                 id="maxYearExperience"
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
@@ -242,14 +255,27 @@ const AddOrEditJob = () => {
                 onChange={handleInputChange}
               >
                 {maxYearExperienceOptions()}
-
-                {/* {Array.from({ length: 51 }, (_, i) => (
-                  <option key={i} value={i}>
-                    {i}
-                  </option>
-                ))} */}
               </select>
             </div>
+          </div>
+
+          <div className="">
+            <input
+              type="checkbox"
+              id="markAsNoExperienceNeeded"
+              name="markAsNoExperienceNeeded"
+              checked={formState?.markAsNoExperienceNeeded}
+              onChange={(e) => {
+                setFormState({
+                  ...formState,
+                  markAsNoExperienceNeeded:
+                    !formState?.markAsNoExperienceNeeded,
+                  minYearExperience: 0,
+                  maxYearExperience: 0,
+                });
+              }}
+            />
+            <label for="markAsNoExperienceNeeded"> Needs no Experience?</label>
           </div>
 
           <div>
