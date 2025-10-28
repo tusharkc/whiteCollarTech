@@ -7,7 +7,7 @@ const WcLocations = () => {
     <div className="mx-0 sm:mx-36 mt-20 sm:mt-48 px-6 sm:px-0">
       <div>
         <h2 className="font-light text-4xl sm:text-[45px] text-center">
-          Our global office network
+          Our global partner network
         </h2>
         <p className="text-center pt-4">
           We are slowly expanding to a global presence but in the meantime, you
@@ -42,7 +42,7 @@ const WcLocations = () => {
       </div>
 
       <h2 className="font-light text-4xl sm:text-[45px] text-center">
-        Our other offices
+        Partner company offices
       </h2>
 
       <div className="grid grid-cols-12 gap-4 mt-7 sm:mt-20 mb-20 sm:mb-36">
